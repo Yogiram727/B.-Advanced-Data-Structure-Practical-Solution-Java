@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class LinkedListPractice {
-
     class Node {
         int data;
         Node next;
@@ -12,18 +11,17 @@ public class LinkedListPractice {
         }
     }
 
-    private Node head = null;
+    private Node head;
 
-    public void insertAtBeginning(int value) {
-        Node newValue = new Node(value);
-        newValue.next = head;
-        head = newValue;
+    public void insertAtFirst(int value) {
+        Node newNode = new Node(value);
+        newNode.next = head;
+        head = newNode;
     }
 
-    public void insertAtEnd(int value) {
+    public void insertAtLast(int value) {
         Node newNode = new Node(value);
         if (head == null) {
-
             head = newNode;
         } else {
             Node last = head;
@@ -35,23 +33,26 @@ public class LinkedListPractice {
     }
 
     public void insertAfter(int prev, int newValue) {
-
         Node current = head;
         while (current != null && current.data != prev) {
             current = current.next;
         }
         if (current == null) {
             System.out.println("Element not found");
-        } else {
-            Node newNode = new Node(newValue);
-            newNode.next = current.next;
-            current.next = newNode;
+            return;
         }
+        Node newNode = new Node(newValue);
+        newNode.next = current.next;
+        current.next = newNode;
     }
 
     public void delStart() {
         if (head == null) {
-            System.out.println("\n List is empty");
+            System.out.println("List is empty");
+            return;
+        }
+        if (head.next == null) {
+            head = null;
         } else {
             head = head.next;
         }
@@ -60,45 +61,43 @@ public class LinkedListPractice {
     public void delEnd() {
         if (head == null) {
             System.out.println("List is empty");
-        } else if (head.next == null) {
-            head = null;
-        } else {
-            Node last = head;
-            Node secondLast = null;
-            while (last.next != null) {
-                secondLast = last;
-                last = last.next;
-            }
-            secondLast.next = null;
+            return;
         }
+        Node last = head;
+        Node secondLast = null;
+        while (last.next != null) {
+            secondLast = last;
+            last = last.next;
+        }
+        secondLast.next = null;
     }
 
     public void display() {
         if (head == null) {
             System.out.println("List is empty");
-        } else {
-            Node current = head;
-            while (current != null) {
-                System.out.print(current.data + " ");
-                current = current.next;
-            }
+            return;
+        }
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.data + " ");
+            current = current.next;
         }
     }
 
     public static void main(String[] args) {
-        LinkedList list = new LinkedList();
+        LinkedListPractice list = new LinkedListPractice();
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter any five element in the list: ");
+
+        System.out.println("Enter any Five element to insert in the list");
         for (int i = 0; i < 5; i++) {
             int value = sc.nextInt();
             // list.insertAtFirst(value);
-            list.insertAtEnd(value);
+            list.insertAtLast(value);
         }
-
-        System.out.println("Given list");
+        System.out.println("\nGiven Linked List: ");
         list.display();
 
-        System.out.println("\nEnter the value after which you want to insert a new value");
+        System.out.println("\nEnter after which element you want to insert a value");
         int prev = sc.nextInt();
 
         System.out.println("\nEnter the new value that you want to insert");
@@ -106,18 +105,13 @@ public class LinkedListPractice {
 
         list.insertAfter(prev, newValue);
 
-        System.out.println("\nList after insertion");
-        list.display();
-
         list.delStart();
-        System.out.println("\nList after deleteion of first element");
+        System.out.println("\nList after deletion of the first element");
         list.display();
 
         list.delEnd();
-        System.out.println("\nList after deletion of last element");
+        System.out.println("\nList after deletion of the last element");
         list.display();
-        sc.close();
 
     }
-
 }

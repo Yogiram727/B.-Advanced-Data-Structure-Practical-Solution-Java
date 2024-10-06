@@ -23,7 +23,6 @@ public class LinkedList {
     public void insertAtEnd(int value) {
         Node newNode = new Node(value);
         if (head == null) {
-
             head = newNode;
         } else {
             Node last = head;
