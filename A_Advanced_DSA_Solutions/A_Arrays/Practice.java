@@ -1,10 +1,10 @@
 package A_Advanced_DSA_Solutions.A_Arrays;
 
+import java.util.Scanner;
 import java.util.Arrays;
 
 public class Practice {
-
-    public static void reverseArray(int[] arr) {
+    public void reverseArray(int arr[]) {
         int start = 0, end = arr.length - 1;
         while (start < end) {
             int temp = arr[start];
@@ -17,12 +17,17 @@ public class Practice {
     }
 
     public static void main(String[] args) {
-        int arr[] = { 1, 2, 4, 5, 6, 7 };
-        System.out.println("Original Array:  " + Arrays.toString(arr));
+        Scanner sc = new Scanner(System.in);
+        Practice obj = new Practice();
+        int arr[] = new int[5];
+        System.out.println("Enter any five element in the array");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = sc.nextInt();
+        }
 
-        reverseArray(arr);
-
-        System.out.println("Reversed Array:" + Arrays.toString(arr));
+        System.out.println("Array befor reverse" + Arrays.toString(arr));
+        obj.reverseArray(arr);
+        System.out.println("Array after reversing: " + Arrays.toString(arr));
+        sc.close();
     }
-
 }
