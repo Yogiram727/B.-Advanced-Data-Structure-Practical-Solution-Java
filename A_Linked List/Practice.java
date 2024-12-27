@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class LinkedListPractice {
+public class Practice {
 
     public class Node {
         int data;
@@ -27,7 +27,8 @@ public class LinkedListPractice {
             head = newNode;
             return;
         }
-        Node last = null;
+
+        Node last = head;
         while (last.next != null) {
             last = last.next;
         }
@@ -41,7 +42,7 @@ public class LinkedListPractice {
         }
 
         if (current == null) {
-            System.out.println("Node not found");
+            System.out.println("Value not found");
             return;
         }
 
@@ -52,7 +53,7 @@ public class LinkedListPractice {
 
     public void delStart() {
         if (head == null) {
-            System.out.println("List is empty");
+            System.out.println("List is emtpy");
             return;
         }
         head = head.next;
@@ -71,6 +72,7 @@ public class LinkedListPractice {
 
         Node last = head;
         Node secondLast = null;
+
         while (last.next != null) {
             secondLast = last;
             last = last.next;
@@ -94,27 +96,30 @@ public class LinkedListPractice {
     }
 
     public static void main(String[] args) {
+        Practice list = new Practice();
         Scanner sc = new Scanner(System.in);
-        LinkedListPractice list = new LinkedListPractice();
+
         int value, newValue, prev;
-        System.out.println("Enter any five element in the list");
+
+        System.out.println("Enter any five element in the list ");
         for (int i = 0; i < 5; i++) {
             value = sc.nextInt();
-            list.insertAtFirst(value);
-            // list.insertAtLast(value);
+            // list.insertAtFirst(value);
+            list.insertAtLast(value);
         }
 
-        System.out.println("Given List ");
+        System.out.println("Given Linked List:");
         list.display();
 
-        System.out.println("Enter after which Number you want to insert a new one");
+        System.out.println("Enter after which value you want to insert a new value");
         prev = sc.nextInt();
 
-        System.out.println("Enter the new number that you want to insert");
+        System.out.println("Enter the new value that you want to insert");
         newValue = sc.nextInt();
 
-        System.out.println("List after insertion of the new Value");
         list.insertAfter(prev, newValue);
+
+        System.out.println("List after insertion of the new value: ");
         list.display();
 
         System.out.println("List after deletion of the first value");
@@ -124,6 +129,7 @@ public class LinkedListPractice {
         System.out.println("List after deletion of the last value");
         list.delEnd();
         list.display();
+        sc.close();
 
     }
 }
