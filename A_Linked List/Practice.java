@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class Practice {
-
     public class Node {
         int data;
         Node next;
@@ -42,7 +41,7 @@ public class Practice {
         }
 
         if (current == null) {
-            System.out.println("Value not found");
+            System.out.println("Element not found ");
             return;
         }
 
@@ -56,12 +55,13 @@ public class Practice {
             System.out.println("List is emtpy");
             return;
         }
+
         head = head.next;
     }
 
     public void delEnd() {
         if (head == null) {
-            System.out.println("List is empty");
+            System.out.println("List is emtpy");
             return;
         }
 
@@ -78,13 +78,13 @@ public class Practice {
             last = last.next;
         }
         secondLast.next = null;
-
     }
 
     public void display() {
         if (head == null) {
-            System.out.println("List is empty");
+            System.out.println("List is emtpy");
             return;
+
         }
 
         Node ptr = head;
@@ -93,43 +93,41 @@ public class Practice {
             ptr = ptr.next;
         }
         System.out.println();
+
     }
 
     public static void main(String[] args) {
+        int value, prev, newValue;
         Practice list = new Practice();
         Scanner sc = new Scanner(System.in);
-
-        int value, newValue, prev;
-
         System.out.println("Enter any five element in the list ");
         for (int i = 0; i < 5; i++) {
             value = sc.nextInt();
-            // list.insertAtFirst(value);
-            list.insertAtLast(value);
+            list.insertAtFirst(value);
+            // list.insertAtLast(value);
         }
 
-        System.out.println("Given Linked List:");
+        System.out.println("Given List ");
         list.display();
 
-        System.out.println("Enter after which value you want to insert a new value");
+        System.out.println("Enter after which element you want to insert a new Number");
         prev = sc.nextInt();
 
-        System.out.println("Enter the new value that you want to insert");
+        System.out.println("Enter the new value you want to insert");
         newValue = sc.nextInt();
 
+        System.out.println("List after insertion of the new value");
         list.insertAfter(prev, newValue);
-
-        System.out.println("List after insertion of the new value: ");
         list.display();
 
-        System.out.println("List after deletion of the first value");
+        System.out.println("List after deletion of the first element");
         list.delStart();
         list.display();
 
-        System.out.println("List after deletion of the last value");
+        System.out.println("List after deletion of last element");
         list.delEnd();
         list.display();
-        sc.close();
 
     }
+
 }

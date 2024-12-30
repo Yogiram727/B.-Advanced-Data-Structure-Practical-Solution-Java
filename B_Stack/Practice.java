@@ -22,16 +22,15 @@ public class Practice {
 
     public void pop() {
         if (top == null) {
-            System.out.println("Stack is empty");
+            System.out.println("Stack is emtpy");
             return;
         }
-
         top = top.next;
     }
 
     public void display() {
         if (top == null) {
-            System.out.println("Stack is empty");
+            System.out.println("Stack is emtpy");
             return;
         }
 
@@ -40,27 +39,26 @@ public class Practice {
             System.out.println(ptr.data);
             ptr = ptr.next;
         }
+
     }
 
     public static void main(String[] args) {
         Practice obj = new Practice();
         obj.push(10);
-        obj.push(20);
-        obj.push(90);
-        obj.push(300);
-
-        System.out.println("Given Stack: ");
+        obj.push(30);
+        obj.push(40);
+        obj.push(50);
+        obj.push(60);
+        System.out.println("Given Stack");
         obj.display();
-
         System.out.println("Stack after partial deletion");
         obj.pop();
         obj.pop();
+        obj.pop();
         obj.display();
-
         System.out.println("Stack after full deletion");
         obj.pop();
         obj.pop();
         obj.display();
-
     }
 }
