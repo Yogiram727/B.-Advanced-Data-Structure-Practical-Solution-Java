@@ -1,5 +1,6 @@
 package D_Searching;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class B_BinarySearch {
@@ -11,7 +12,7 @@ public class B_BinarySearch {
             middle = first + (last - first) / 2;
             if (arr[middle] == x) {
                 return middle;
-            } else if (arr[middle] > x) {
+            } else if (arr[middle] > x) {// search in the left side
                 last = middle - 1;
             } else {
                 first = middle + 1;
@@ -24,6 +25,7 @@ public class B_BinarySearch {
         B_BinarySearch obj = new B_BinarySearch();
         Scanner sc = new Scanner(System.in);
         int[] arr = { 1, 3, 4, 5, 6 };
+        Arrays.sort(arr);
         int x;
         System.out.println("Enter the element to be searched");
         x = sc.nextInt();
