@@ -1,7 +1,7 @@
 package E_Sorting;
 
-import java.util.Scanner;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Practice {
 
@@ -17,11 +17,11 @@ public class Practice {
         }
     }
 
-    public void selectionSorting(int arr[], int n) {
+    public void selectionSort(int arr[], int n) {
         for (int i = 0; i < n - 1; i++) {
             int minIndex = i;
             for (int j = i + 1; j < n; j++) {
-                if (arr[i] > j) {
+                if (arr[j] < arr[minIndex]) {
                     minIndex = j;
                 }
             }
@@ -35,17 +35,14 @@ public class Practice {
 
     public static void main(String[] args) {
         Practice sort = new Practice();
-        Scanner sc = new Scanner(System.in);
+        int arr[] = { 5, 6, 3, 1, 9, 2 };
 
-        int arr[] = new int[5];
-        int n = 5;
-        System.out.println("Enter any 5 unsorted element in the array: ");
-        for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextInt();
-        }
-        System.out.println("Given Unsorted Array: " + Arrays.toString(arr));
-        // sort.bubbleSorting(arr, n);
-        sort.selectionSorting(arr, n);
-        System.out.println("Array After Sorting:" + Arrays.toString(arr));
+        System.out.println("Given Array before sorting: " + Arrays.toString(arr));
+        // sort.bubbleSorting(arr, arr.length);
+        sort.selectionSort(arr, arr.length);
+        System.out.println();
+
+        System.out.println("Given Arrays after sorting: " + Arrays.toString(arr));
+        System.out.println();
     }
 }
