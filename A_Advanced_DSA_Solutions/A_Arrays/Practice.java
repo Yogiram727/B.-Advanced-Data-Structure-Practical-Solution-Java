@@ -1,25 +1,23 @@
 package A_Advanced_DSA_Solutions.A_Arrays;
 
-import java.util.Arrays;
-
 public class Practice {
 
-    public void findReverse(int arr[]) {
-        int start = 0, end = arr.length - 1;
-        while (start < end) {
-            int temp = arr[start];
-            arr[start] = arr[end];
-            arr[end] = temp;
-            start++;
-            end--;
+    public int findMaxSubSum(int arr[]) {
+        int currentSum = arr[0];
+        int maxSum = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            currentSum = Math.max(arr[i], arr[i] + currentSum);
+            maxSum = Math.max(maxSum, currentSum);
         }
+        return maxSum;
     }
 
     public static void main(String[] args) {
-        Practice rev = new Practice();
-        int arr[] = { 1, 2, 3, 4, 5 };
-        System.out.println("Array before reverse: " + Arrays.toString(arr));
-        rev.findReverse(arr);
-        System.out.println("Array after reverse" + Arrays.toString(arr));
+        Practice obj = new Practice();
+        int arr[] = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
+
+        int result = obj.findMaxSubSum(arr);
+        System.out.println("Maximum sum of the sub array is " + result);
     }
+
 }
