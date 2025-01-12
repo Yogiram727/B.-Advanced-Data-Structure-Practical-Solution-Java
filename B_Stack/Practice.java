@@ -6,8 +6,8 @@ public class Practice {
         int data;
         Node next;
 
-        Node(int value) {
-            this.data = value;
+        Node(int item) {
+            this.data = item;
             this.next = null;
         }
     }
@@ -22,10 +22,9 @@ public class Practice {
 
     public void pop() {
         if (top == null) {
-            System.out.println("Stack is empty");
+            System.out.println("Stack is emtpy");
             return;
         }
-
         top = top.next;
     }
 
@@ -40,20 +39,17 @@ public class Practice {
             System.out.println(ptr.data);
             ptr = ptr.next;
         }
-
     }
 
     public static void main(String[] args) {
         Practice stk = new Practice();
-        stk.push(223);
-        stk.push(999);
-        stk.push(343);
-        stk.push(1111);
-        stk.push(000);
-        System.out.println("Given Stack: ");
+        stk.push(11);
+        stk.push(3);
+        stk.push(9);
+        stk.push(77);
+        System.out.println("Given Stack");
         stk.display();
         System.out.println("Stack after partial deletion");
-        stk.pop();
         stk.pop();
         stk.pop();
         stk.display();
@@ -61,5 +57,6 @@ public class Practice {
         stk.pop();
         stk.pop();
         stk.display();
+
     }
 }
