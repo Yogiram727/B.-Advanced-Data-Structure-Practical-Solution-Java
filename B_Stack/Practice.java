@@ -33,8 +33,8 @@ public class Practice {
             System.out.println("Stack is empty");
             return;
         }
-
         Node ptr = top;
+
         while (ptr != null) {
             System.out.println(ptr.data);
             ptr = ptr.next;
@@ -44,12 +44,14 @@ public class Practice {
     public static void main(String[] args) {
         Practice stk = new Practice();
         stk.push(11);
-        stk.push(3);
-        stk.push(9);
-        stk.push(77);
+        stk.push(22);
+        stk.push(33);
+        stk.push(44);
+        stk.push(55);
         System.out.println("Given Stack");
         stk.display();
         System.out.println("Stack after partial deletion");
+        stk.pop();
         stk.pop();
         stk.pop();
         stk.display();
