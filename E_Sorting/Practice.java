@@ -1,10 +1,10 @@
 package E_Sorting;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Practice {
-
-    public void bubbleSorting(int arr[]) {
+    public void bubbleSort(int arr[]) {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
@@ -19,14 +19,14 @@ public class Practice {
 
     public void selectionSort(int arr[]) {
         int n = arr.length;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n - 1; i++) {
             int minIndex = i;
             for (int j = i + 1; j < n; j++) {
-                if (arr[j] < arr[minIndex]) {
+                if (arr[minIndex] > arr[j]) {
                     minIndex = j;
                 }
             }
-            if (i != minIndex) {
+            if (minIndex != i) {
                 int temp = arr[i];
                 arr[i] = arr[minIndex];
                 arr[minIndex] = temp;
@@ -36,10 +36,11 @@ public class Practice {
 
     public static void main(String[] args) {
         Practice sort = new Practice();
-        int arr[] = { 8, 6, 3, 1, 0 };
-        System.out.println("Give array before sorting: " + Arrays.toString(arr));
-        // sort.bubbleSorting(arr);
+        int arr[] = { 8, 5, 3, 2, 6 };
+        System.out.println("Given Array: " + Arrays.toString(arr));
+        // sort.bubbleSort(arr);
         sort.selectionSort(arr);
-        System.out.println("Given array after sortig: " + Arrays.toString(arr));
+        System.out.println("Array after sorting" + Arrays.toString(arr));
+
     }
 }
