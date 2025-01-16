@@ -1,10 +1,9 @@
 package E_Sorting;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Practice {
-    public void bubbleSort(int arr[]) {
+    public void bubbleSorting(int arr[]) {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
@@ -22,11 +21,11 @@ public class Practice {
         for (int i = 0; i < n - 1; i++) {
             int minIndex = i;
             for (int j = i + 1; j < n; j++) {
-                if (arr[minIndex] > arr[j]) {
+                if (arr[j] < arr[minIndex]) {
                     minIndex = j;
                 }
             }
-            if (minIndex != i) {
+            if (i != minIndex) {
                 int temp = arr[i];
                 arr[i] = arr[minIndex];
                 arr[minIndex] = temp;
@@ -36,11 +35,10 @@ public class Practice {
 
     public static void main(String[] args) {
         Practice sort = new Practice();
-        int arr[] = { 8, 5, 3, 2, 6 };
+        int arr[] = { 9, 5, 3, 21, 1 };
         System.out.println("Given Array: " + Arrays.toString(arr));
-        // sort.bubbleSort(arr);
+        // sort.bubbleSorting(arr);
         sort.selectionSort(arr);
-        System.out.println("Array after sorting" + Arrays.toString(arr));
-
+        System.out.println("Array after sorting: " + Arrays.toString(arr));
     }
 }
