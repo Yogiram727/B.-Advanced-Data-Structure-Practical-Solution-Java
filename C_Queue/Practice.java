@@ -11,14 +11,14 @@ public class Practice {
         }
     }
 
-    Node front = null, rear = null;
+    Node rear = null, front = null;
 
     public void enqueue(int value) {
         Node newNode = new Node(value);
         newNode.next = null;
         if (front == null) {
-            front = newNode;
             rear = newNode;
+            front = newNode;
             rear.next = front;
         } else {
             rear.next = newNode;
@@ -36,6 +36,7 @@ public class Practice {
         if (front == rear) {
             front = null;
             rear = null;
+
         } else {
             front = front.next;
             rear.next = front;
@@ -56,22 +57,23 @@ public class Practice {
     }
 
     public static void main(String[] args) {
-        Practice qu = new Practice();
-        qu.enqueue(11);
-        qu.enqueue(22);
-        qu.enqueue(33);
-        qu.enqueue(44);
-        qu.enqueue(55);
-        System.out.println("Given Queue");
-        qu.display();
+        Practice qq = new Practice();
+        qq.enqueue(1);
+        qq.enqueue(2);
+        qq.enqueue(3);
+        qq.enqueue(4);
+        qq.enqueue(5);
+        System.out.println("Given Queue: ");
+        qq.display();
         System.out.println("Queue after partial deletion");
-        qu.dequeue();
-        qu.dequeue();
-        qu.dequeue();
-        qu.display();
+        qq.dequeue();
+        qq.dequeue();
+        qq.display();
         System.out.println("Queue after full deletion");
-        qu.dequeue();
-        qu.dequeue();
-        qu.display();
+        qq.dequeue();
+        qq.dequeue();
+        qq.dequeue();
+        qq.display();
+
     }
 }

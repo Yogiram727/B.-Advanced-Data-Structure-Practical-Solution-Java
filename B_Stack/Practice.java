@@ -1,6 +1,7 @@
 package B_Stack;
 
 public class Practice {
+
     public class Node {
         int data;
         Node next;
@@ -13,8 +14,8 @@ public class Practice {
 
     Node top = null;
 
-    public void push(int item) {
-        Node newNode = new Node(item);
+    public void push(int value) {
+        Node newNode = new Node(value);
         newNode.next = top;
         top = newNode;
     }
@@ -41,20 +42,19 @@ public class Practice {
 
     public static void main(String[] args) {
         Practice stk = new Practice();
-        stk.push(11);
-        stk.push(22);
-        stk.push(33);
+        stk.push(1);
+        stk.push(2);
+        stk.push(3);
         stk.push(44);
-        stk.push(55);
+        stk.push(66);
         System.out.println("Given Stack: ");
         stk.display();
+        System.out.println("Stack after parital deletion");
         stk.pop();
         stk.pop();
-        stk.pop();
-        System.out.println("Stack after partial deletion");
         stk.display();
-
         System.out.println("Stack after full deletion");
+        stk.pop();
         stk.pop();
         stk.pop();
         stk.display();

@@ -1,15 +1,23 @@
 package A_Advanced_DSA_Solutions.A_Arrays;
 
+import java.util.Arrays;
+
 public class Practice {
     public static void main(String[] args) {
-        int[] arr = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
-        int currentSum = arr[0];
-        int maxSum = arr[0];
+        int arr[] = { 1, 4, 6, 7, 44, 56 };
+        int min = arr[0];
+        int max = arr[0];
+        System.out.println("Given Array: " + Arrays.toString(arr));
         for (int i = 0; i < arr.length; i++) {
-            currentSum = Math.max(arr[i], arr[i] + currentSum);
-            maxSum = Math.max(currentSum, maxSum);
-
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+            if (arr[i] > max) {
+                max = arr[i];
+            }
         }
-        System.out.println("Maximum sum of the subarray is : " + maxSum);
+        System.out.println("Maximum element in the array is: " + max);
+        System.out.println("Minimum element in the array is : " + min);
+
     }
 }
