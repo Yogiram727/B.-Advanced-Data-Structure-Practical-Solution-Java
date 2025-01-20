@@ -1,10 +1,10 @@
-package Questions;
+package Questions.A_FileHandling;
 
 import java.io.FileWriter;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class J_FileWriter {
+public class A_FileWriter {
     public static void main(String[] args) {
         try {
             FileWriter wr = new FileWriter("c:\\Users\\Dell\\Downloads\\.output.txt");
