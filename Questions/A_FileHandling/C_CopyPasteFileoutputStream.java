@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class C_CopyFile {
+public class C_CopyPasteFileoutputStream {
     public static void main(String[] args) {
         try (
                 FileInputStream in = new FileInputStream("c:\\Users\\Dell\\Downloads\\input.txt");

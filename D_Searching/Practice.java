@@ -1,7 +1,6 @@
 package D_Searching;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Practice {
     public int linearSearch(int arr[], int x) {
@@ -15,16 +14,15 @@ public class Practice {
     }
 
     public int binarySearch(int arr[], int x) {
-        int n = arr.length;
-        int first = 0, last = n - 1, middle;
-        while (first <= last) {
-            middle = first + (last - first) / 2;
-            if (arr[middle] == x) {
+        int left = 0, right = arr.length - 1, middle;
+        while (left <= right) {
+            middle = left + (right - left) / 2;
+            if (x == arr[middle]) {
                 return middle;
             } else if (x < arr[middle]) {
-                last = middle - 1;
+                right = middle - 1;
             } else {
-                first = middle + 1;
+                left = middle + 1;
             }
         }
         return -1;
@@ -32,18 +30,17 @@ public class Practice {
 
     public static void main(String[] args) {
         Practice find = new Practice();
-        Scanner sc = new Scanner(System.in);
-        int arr[] = { 34, 46, 67, 88, 99 };
-        System.out.println("Given Array" + Arrays.toString(arr));
-        System.out.println("Enter the number to search in the array");
-        int x = sc.nextInt();
+        int arr[] = { 3, 46, 6, 7, 5 };
+        int x = 5;
+        System.out.println("Given Array: " + Arrays.toString(arr));
         // int res = find.linearSearch(arr, x);
+        Arrays.sort(arr);
         int res = find.binarySearch(arr, x);
         if (res == -1) {
-            System.out.println("Number is not in the array");
+            System.out.println("Element is not in the array: ");
+
         } else {
-            System.out.println("Number is at index:" + res);
+            System.out.println("Element is at index: " + res);
         }
-        sc.close();
     }
 }
