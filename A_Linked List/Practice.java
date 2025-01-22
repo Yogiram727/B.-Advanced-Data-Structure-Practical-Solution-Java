@@ -118,5 +118,6 @@ public class Practice {
         System.out.println("List after the deletion of the last value");
         list.delEnd();
         list.display();
+        sc.close();
     }
 }
