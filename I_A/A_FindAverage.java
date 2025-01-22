@@ -13,7 +13,7 @@ public class A_FindAverage {
 
         double average = 0;
         double sum = 0;
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 5; i++) {
             sum = sum + arr[i];
         }
         average = sum / 5;
