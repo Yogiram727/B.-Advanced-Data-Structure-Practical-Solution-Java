@@ -36,5 +36,6 @@ public class B_BinarySearch {
         } else {
             System.out.println(+x + " is in " + result + " index");
         }
+        sc.close();
     }
 }

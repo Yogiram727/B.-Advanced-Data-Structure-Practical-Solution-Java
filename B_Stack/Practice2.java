@@ -1,8 +1,7 @@
 package B_Stack;
 
 public class Practice2 {
-
-    class Node {
+    public class Node {
         int data;
         Node next;
 
@@ -30,7 +29,7 @@ public class Practice2 {
 
     public void display() {
         if (top == null) {
-            System.out.println("Stack is null");
+            System.out.println("Stack is emtpy");
             return;
         }
         Node ptr = top;
@@ -43,21 +42,22 @@ public class Practice2 {
     public static void main(String[] args) {
         Practice2 stk = new Practice2();
         stk.push(11);
+        stk.push(22);
         stk.push(33);
         stk.push(44);
-        stk.push(66);
         stk.push(55);
-        System.out.println("Given Stack: ");
+        System.out.println("Given Stack");
         stk.display();
         System.out.println("Stack after partial deletion");
+        stk.pop();
+        stk.pop();
+        stk.display();
+        System.out.println("Stack after full deletion");
         stk.pop();
         stk.pop();
         stk.pop();
         stk.display();
 
-        System.out.println("Stack after full deletion");
-        stk.pop();
-        stk.pop();
-        stk.display();
     }
+
 }
