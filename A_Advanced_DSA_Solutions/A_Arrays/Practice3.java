@@ -1,10 +1,9 @@
 package A_Advanced_DSA_Solutions.A_Arrays;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Practice3 {
-    public int searchRotatedArray(int arr[], int target) {
+    public int findRotatedSortArray(int arr[], int target) {
         int n = arr.length;
         int left = 0, right = n - 1, mid;
         while (left <= right) {
@@ -26,22 +25,21 @@ public class Practice3 {
                 }
             }
         }
+
         return -1;
     }
 
     public static void main(String[] args) {
         Practice3 obj = new Practice3();
-        Scanner sc = new Scanner(System.in);
         int[] nums = { 4, 5, 6, 7, 0, 1, 2 };
+
         System.out.println("Given Array: " + Arrays.toString(nums));
-        System.out.println("Enter the element to search");
-        int target = sc.nextInt();
-        int res = obj.searchRotatedArray(nums, target);
+        int res = obj.findRotatedSortArray(nums, 2);
         if (res == -1) {
-            System.out.println("Number is not in the array");
+            System.out.println("Given number is not in the list: ");
         } else {
-            System.out.println("Number is at index: " + res);
+            System.out.println("Given number is at index: " + res);
         }
-        sc.close();
+
     }
 }

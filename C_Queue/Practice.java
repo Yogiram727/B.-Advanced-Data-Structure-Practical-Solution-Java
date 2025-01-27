@@ -1,7 +1,7 @@
 package C_Queue;
 
 public class Practice {
-    int queue[], front, rear, n;
+    int front, rear, n, queue[];
 
     Practice() {
         this.front = -1;
@@ -10,7 +10,7 @@ public class Practice {
         queue = new int[n];
     }
 
-    public void enqueue(int item) {
+    public void enqueue(int value) {
         if ((rear + 1) % n == front) {
             System.out.println("Queue is full");
             return;
@@ -21,7 +21,7 @@ public class Practice {
         } else {
             rear = (rear + 1) % n;
         }
-        queue[rear] = item;
+        queue[rear] = value;
     }
 
     public void dequeue() {
@@ -39,7 +39,7 @@ public class Practice {
 
     public void display() {
         if (front == -1) {
-            System.out.println("Queue is emtpy");
+            System.out.println("Queue is empty");
             return;
         }
         int i = front;
@@ -52,22 +52,21 @@ public class Practice {
 
     public static void main(String[] args) {
         Practice qu = new Practice();
-        qu.enqueue(11);
-        qu.enqueue(22);
+        qu.enqueue(1);
         qu.enqueue(33);
-        qu.enqueue(44);
-        qu.enqueue(55);
+        qu.enqueue(66);
+        qu.enqueue(88);
+        qu.enqueue(99);
         System.out.println("Given Queue : ");
         qu.display();
         System.out.println("Queue after partial deletion");
-        qu.dequeue();
         qu.dequeue();
         qu.dequeue();
         qu.display();
         System.out.println("Queue after full deletion");
         qu.dequeue();
         qu.dequeue();
+        qu.dequeue();
         qu.display();
     }
-
 }
