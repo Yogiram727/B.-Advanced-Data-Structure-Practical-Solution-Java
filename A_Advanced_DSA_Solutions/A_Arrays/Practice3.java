@@ -1,27 +1,26 @@
 package A_Advanced_DSA_Solutions.A_Arrays;
 
-import java.util.Arrays;
-
 public class Practice3 {
-    public int findRotatedSortArray(int arr[], int target) {
+    public int searchRotatedSort(int arr[], int target) {
         int n = arr.length;
-        int left = 0, right = n - 1, mid;
+        int left = 0, right = n - 1, middle;
+
         while (left <= right) {
-            mid = left + (right - left) / 2;
-            if (arr[mid] == target) {
-                return mid;
+            middle = left + (right - left) / 2;
+            if (arr[middle] == target) {
+                return middle;
             }
-            if (arr[left] <= arr[mid]) {
-                if (target >= arr[left] && target < arr[mid]) {
-                    right = mid - 1;
+            if (arr[left] < arr[middle]) {
+                if (target >= arr[left] && target < arr[middle]) {
+                    right = middle - 1;
                 } else {
-                    left = mid + 1;
+                    left = middle + 1;
                 }
             } else {
-                if (target > arr[mid] && target <= arr[right]) {
-                    left = mid + 1;
+                if (target > arr[middle] && target <= arr[right]) {
+                    left = middle + 1;
                 } else {
-                    right = mid - 1;
+                    right = middle - 1;
                 }
             }
         }
@@ -32,14 +31,11 @@ public class Practice3 {
     public static void main(String[] args) {
         Practice3 obj = new Practice3();
         int[] nums = { 4, 5, 6, 7, 0, 1, 2 };
-
-        System.out.println("Given Array: " + Arrays.toString(nums));
-        int res = obj.findRotatedSortArray(nums, 2);
+        int res = obj.searchRotatedSort(nums, 96);
         if (res == -1) {
-            System.out.println("Given number is not in the list: ");
+            System.out.println("Number is not in the array");
         } else {
-            System.out.println("Given number is at index: " + res);
+            System.out.println("Numbe is at index: " + res);
         }
-
     }
 }
