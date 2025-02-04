@@ -18,7 +18,7 @@ public class B_BufferReader {
                     System.out.println("> " + readString);
                 }
             } while (!readString.isEmpty());
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println("An error occured");
             e.printStackTrace();
         }
