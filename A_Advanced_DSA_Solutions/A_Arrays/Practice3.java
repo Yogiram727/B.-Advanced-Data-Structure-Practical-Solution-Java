@@ -1,41 +1,37 @@
 package A_Advanced_DSA_Solutions.A_Arrays;
 
-public class Practice3 {
-    public int searchRotatedSort(int arr[], int target) {
-        int n = arr.length;
-        int left = 0, right = n - 1, middle;
+import java.util.Arrays;
 
-        while (left <= right) {
-            middle = left + (right - left) / 2;
-            if (arr[middle] == target) {
-                return middle;
-            }
-            if (arr[left] < arr[middle]) {
-                if (target >= arr[left] && target < arr[middle]) {
-                    right = middle - 1;
-                } else {
-                    left = middle + 1;
-                }
-            } else {
-                if (target > arr[middle] && target <= arr[right]) {
-                    left = middle + 1;
-                } else {
-                    right = middle - 1;
-                }
+public class Practice3 {
+    public void findMinDifference(int arr[], int m) {
+        int n = arr.length;
+        if (m > n) {
+            System.out.println("Insuffient packets for give students");
+            return;
+        }
+        Arrays.sort(arr);
+
+        int minDiff = Integer.MAX_VALUE;
+        int startIndex = -1;
+
+        for (int i = 0; i + m - 1 < n; i++) {
+            int diff = arr[i + m - 1] - arr[i];
+            if (diff < minDiff) {
+                minDiff = diff;
+                startIndex = i;
             }
         }
-
-        return -1;
+        System.out.println("MinDifference: " + minDiff);
+        System.out.print("Chaocolates Packets to be distributed: ");
+        for (int i = startIndex; i < startIndex + m; i++) {
+            System.out.print(arr[i] + " ");
+        }
     }
 
     public static void main(String[] args) {
         Practice3 obj = new Practice3();
-        int[] nums = { 4, 5, 6, 7, 0, 1, 2 };
-        int res = obj.searchRotatedSort(nums, 96);
-        if (res == -1) {
-            System.out.println("Number is not in the array");
-        } else {
-            System.out.println("Numbe is at index: " + res);
-        }
+        int[] chocolates = { 7, 3, 2, 4, 9, 12, 56 };
+        obj.findMinDifference(chocolates, 3);
+
     }
 }

@@ -17,7 +17,7 @@ public class D_FibonacciuptoN {
         if (n >= 0) {
             System.out.print(a);
         }
-        while (b <= n) {
+        while (b < n) {
             System.out.print(b);
             int c = a + b;
             a = b;

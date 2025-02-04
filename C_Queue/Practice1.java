@@ -1,77 +1,73 @@
 package C_Queue;
 
 public class Practice1 {
-    public class Node {
-        int data;
-        Node next;
+    int front, rear, n, queue[];
 
-        Node(int value) {
-            this.data = value;
-            this.next = null;
-        }
+    Practice1() {
+        this.front = -1;
+        this.rear = -1;
+        this.n = 5;
+        queue = new int[n];
     }
 
-    Node front = null, rear = null;
-
     public void enqueue(int value) {
-        Node newNode = new Node(value);
-        newNode.next = null;
-        if (front == null) {
-            front = newNode;
-            rear = newNode;
-            rear.next = front;
-        } else {
-            rear.next = newNode;
-            rear = newNode;
-            rear.next = front;
+        if ((rear + 1) % n == front) {
+            System.out.println("Queue is full");
+            return;
         }
+        if (front == -1) {
+            rear = 0;
+            front = 0;
+        } else {
+            rear = (rear + 1) % n;
+        }
+        queue[rear] = value;
     }
 
     public void dequeue() {
-        if (front == null) {
-            System.out.println("Queue is emtpy");
+        if (front == -1) {
+            System.out.println("Queeu is emtpy");
             return;
         }
-        if (front == rear) {
-            front = null;
-            rear = null;
+        if (rear == front) {
+            rear = -1;
+            front = -1;
         } else {
-            front = front.next;
-            rear.next = front;
+            front = (front + 1) % n;
         }
     }
 
     public void display() {
-        if (front == null) {
-            System.out.println("Queue is empty");
+        if (front == -1) {
+            System.out.println("Queue is emtpy");
             return;
         }
-        Node ptr = front;
+        int i = front;
         do {
-            System.out.print(ptr.data + " ");
-            ptr = ptr.next;
-        } while (ptr != front);
+            System.out.print(queue[i] + " ");
+            i = (i + 1) % n;
+        } while (i != (rear + 1) % n);
         System.out.println();
     }
 
     public static void main(String[] args) {
-        Practice1 obj = new Practice1();
-        obj.enqueue(33);
-        obj.enqueue(55);
-        obj.enqueue(99);
-        obj.enqueue(77);
-        obj.enqueue(55);
-        System.out.println("Given Queue: ");
-        obj.display();
-        System.out.println("Queue after partial Deletion");
-        obj.dequeue();
-        obj.dequeue();
-        obj.display();
+        Practice1 qu = new Practice1();
+        qu.enqueue(11);
+        qu.enqueue(22);
+        qu.enqueue(33);
+        qu.enqueue(44);
+        qu.enqueue(55);
+        System.out.println("Given Queue ");
+        qu.display();
+        System.out.println("Queue after partial deletion");
+        qu.dequeue();
+        qu.dequeue();
+        qu.dequeue();
+        qu.display();
         System.out.println("Queue after full deletion");
-        obj.dequeue();
-        obj.dequeue();
-        obj.dequeue();
-        obj.display();
+        qu.dequeue();
+        qu.dequeue();
+        qu.display();
 
     }
 }

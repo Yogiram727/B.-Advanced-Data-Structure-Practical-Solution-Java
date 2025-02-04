@@ -32,6 +32,7 @@ public class Practice2 {
             System.out.println("Stack is emtpy");
             return;
         }
+
         Node ptr = top;
         while (ptr != null) {
             System.out.println(ptr.data);
@@ -42,22 +43,21 @@ public class Practice2 {
     public static void main(String[] args) {
         Practice2 stk = new Practice2();
         stk.push(11);
-        stk.push(22);
-        stk.push(33);
-        stk.push(44);
         stk.push(55);
-        System.out.println("Given Stack");
+        stk.push(66);
+        stk.push(44);
+        stk.push(33);
+        System.out.println("Given Stack : ");
         stk.display();
-        System.out.println("Stack after partial deletion");
+        System.out.println("Stack after partial Deletion: ");
+        stk.pop();
         stk.pop();
         stk.pop();
         stk.display();
-        System.out.println("Stack after full deletion");
-        stk.pop();
+        System.out.println("Stack after full deletioin");
         stk.pop();
         stk.pop();
         stk.display();
 
     }
-
 }
