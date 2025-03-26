@@ -5,10 +5,8 @@ import java.util.Scanner;
 public class Practice2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         String str1 = sc.nextLine();
-
-        char str[] = str1.toCharArray();
+        char[] str = str1.toCharArray();
 
         for (int i = 0; i < str.length; i++) {
             int count = 1;
@@ -21,10 +19,8 @@ public class Practice2 {
                 }
             }
             if (count > 1) {
-                System.out.println(str[i]);
+                System.out.print(str[i] + " ");
             }
-
         }
-        sc.close();
     }
 }

@@ -15,6 +15,9 @@ public class B_LinkedList {
         while (itr.hasNext()) {
             System.out.println(itr.next());
         }
+        for (String name : list) {
+            System.out.print(name + " ");
+        }
 
     }
 }

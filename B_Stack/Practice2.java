@@ -1,6 +1,7 @@
 package B_Stack;
 
 public class Practice2 {
+
     public class Node {
         int data;
         Node next;
@@ -17,6 +18,7 @@ public class Practice2 {
         Node newNode = new Node(item);
         newNode.next = top;
         top = newNode;
+
     }
 
     public void pop() {
@@ -24,6 +26,7 @@ public class Practice2 {
             System.out.println("Stack is emtpy");
             return;
         }
+
         top = top.next;
     }
 
@@ -32,7 +35,6 @@ public class Practice2 {
             System.out.println("Stack is emtpy");
             return;
         }
-
         Node ptr = top;
         while (ptr != null) {
             System.out.println(ptr.data);
@@ -42,22 +44,22 @@ public class Practice2 {
 
     public static void main(String[] args) {
         Practice2 stk = new Practice2();
-        stk.push(11);
-        stk.push(55);
-        stk.push(66);
-        stk.push(44);
-        stk.push(33);
-        System.out.println("Given Stack : ");
+        stk.push(10);
+        stk.push(20);
+        stk.push(30);
+        stk.push(40);
+        stk.push(50);
+        System.out.println("Given Stack");
         stk.display();
-        System.out.println("Stack after partial Deletion: ");
+        System.out.println("Stack after partial Deletion");
         stk.pop();
-        stk.pop();
-        stk.pop();
-        stk.display();
-        System.out.println("Stack after full deletioin");
         stk.pop();
         stk.pop();
         stk.display();
 
+        System.out.println("Stack after full Deletion");
+        stk.pop();
+        stk.pop();
+        stk.display();
     }
 }

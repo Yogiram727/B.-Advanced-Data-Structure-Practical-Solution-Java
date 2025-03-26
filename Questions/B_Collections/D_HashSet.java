@@ -15,6 +15,10 @@ public class D_HashSet {
         while (itr.hasNext()) {
             System.out.println(itr.next());
         }
+
+        for (Integer num : hs) {
+            System.out.print(num + " ");
+        }
     }
 
 }
