@@ -1,7 +1,6 @@
 package B_Stack;
 
 public class Practice2 {
-
     public class Node {
         int data;
         Node next;
@@ -18,21 +17,19 @@ public class Practice2 {
         Node newNode = new Node(item);
         newNode.next = top;
         top = newNode;
-
     }
 
     public void pop() {
         if (top == null) {
-            System.out.println("Stack is emtpy");
+            System.out.println("Stack is empty");
             return;
         }
-
         top = top.next;
     }
 
     public void display() {
         if (top == null) {
-            System.out.println("Stack is emtpy");
+            System.out.println("Stack is empty");
             return;
         }
         Node ptr = top;
@@ -40,26 +37,26 @@ public class Practice2 {
             System.out.println(ptr.data);
             ptr = ptr.next;
         }
+        System.out.println();
     }
 
     public static void main(String[] args) {
-        Practice2 stk = new Practice2();
-        stk.push(10);
-        stk.push(20);
-        stk.push(30);
-        stk.push(40);
-        stk.push(50);
-        System.out.println("Given Stack");
-        stk.display();
-        System.out.println("Stack after partial Deletion");
-        stk.pop();
-        stk.pop();
-        stk.pop();
-        stk.display();
-
-        System.out.println("Stack after full Deletion");
-        stk.pop();
-        stk.pop();
-        stk.display();
+        Practice2 st = new Practice2();
+        st.push(34);
+        st.push(55);
+        st.push(99);
+        st.push(44);
+        st.push(88);
+        System.out.println("Given Stack: ");
+        st.display();
+        System.out.println("Stack after partial deletion");
+        st.pop();
+        st.pop();
+        st.display();
+        System.out.println("Stack after full deletion");
+        st.pop();
+        st.pop();
+        st.pop();
+        st.display();
     }
 }
