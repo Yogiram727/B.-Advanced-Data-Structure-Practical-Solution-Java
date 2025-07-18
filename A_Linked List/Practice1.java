@@ -22,12 +22,10 @@ public class Practice1 {
     public void insertAtLast(int value) {
         Node newNode = new Node(value);
         newNode.next = null;
-
         if (head == null) {
             head = newNode;
             return;
         }
-
         Node last = head;
         while (last.next != null) {
             last = last.next;
@@ -45,7 +43,7 @@ public class Practice1 {
             current = current.next;
         }
         if (current == null) {
-            System.out.println("Node not found: ");
+            System.out.println("Node not found");
             return;
         }
         Node newNode = new Node(newValue);
@@ -58,6 +56,7 @@ public class Practice1 {
             System.out.println("List is empty");
             return;
         }
+
         Node ptr = head;
         while (ptr != null) {
             System.out.print(ptr.data + " ");
@@ -84,8 +83,8 @@ public class Practice1 {
             return;
         }
 
-        Node secondLast = null;
         Node last = head;
+        Node secondLast = null;
         while (last.next != null) {
             secondLast = last;
             last = last.next;
@@ -96,29 +95,27 @@ public class Practice1 {
     public static void main(String[] args) {
         Practice1 list = new Practice1();
         Scanner sc = new Scanner(System.in);
-        int value, prev, newValue;
-
-        System.out.println("Enter any five element in the list: ");
+        int value, newValue, prev;
+        System.out.println("Enter any five element in the list:");
         for (int i = 0; i < 5; i++) {
             value = sc.nextInt();
             // list.insertAtFirst(value);
             list.insertAtLast(value);
         }
-
-        System.out.println("Given List ");
+        System.out.println("Given List: ");
         list.display();
 
-        System.out.println("Enter after which value you want to insert a new value: ");
+        System.out.println("Enter after which value you want to insert a new value");
         prev = sc.nextInt();
 
-        System.out.println("Enter the new value that you want to insert: ");
+        System.out.println("Enter the new value that you want to insert");
         newValue = sc.nextInt();
-
         list.insertAfter(prev, newValue);
-        System.out.println("List after the insertion of the new value: ");
+
+        System.out.println("List after the insertion of the new value");
         list.display();
 
-        System.out.println("List after the deletion of the first value: ");
+        System.out.println("List after the deletion of the first value:");
         list.delStart();
         list.display();
 

@@ -3,7 +3,8 @@ package E_Sorting;
 import java.util.Arrays;
 
 public class Practice7 {
-    public void bubbleSort(int arr[]) {
+
+    public void bubbleSorting(int arr[]) {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - 1 - i; j++) {
@@ -21,7 +22,7 @@ public class Practice7 {
         for (int i = 0; i < n - 1; i++) {
             int minIndex = i;
             for (int j = i + 1; j < n; j++) {
-                if (arr[minIndex] > arr[j]) {
+                if (arr[j] < arr[minIndex]) {
                     minIndex = j;
                 }
             }
@@ -35,10 +36,11 @@ public class Practice7 {
 
     public static void main(String[] args) {
         Practice7 sort = new Practice7();
-        int arr[] = { 5, 3, 1, 6, 2 };
-        System.out.println("Array before sorting:" + Arrays.toString(arr));
-        // sort.bubbleSort(arr);
+        int arr[] = { 6, 3, 1, 7, 2 };
+        System.out.print("Given Array: " + Arrays.toString(arr));
+        System.out.println();
+        // sort.bubbleSorting(arr);
         sort.selectionSort(arr);
-        System.out.println("Array after sort: " + Arrays.toString(arr));
+        System.out.println("Array after sorting: " + Arrays.toString(arr));
     }
 }

@@ -13,8 +13,8 @@ public class Practice3 {
 
     Node top = null;
 
-    public void push(int value) {
-        Node newNode = new Node(value);
+    public void push(int item) {
+        Node newNode = new Node(item);
         newNode.next = top;
         top = newNode;
     }
@@ -38,27 +38,25 @@ public class Practice3 {
             ptr = ptr.next;
         }
         System.out.println();
-
     }
 
     public static void main(String[] args) {
-        Practice3 stk = new Practice3();
-        stk.push(1);
-        stk.push(2);
-        stk.push(5);
-        stk.push(6);
-        stk.push(8);
+        Practice3 st = new Practice3();
+        st.push(3);
+        st.push(5);
+        st.push(6);
+        st.push(8);
+        st.push(9);
         System.out.println("Given Stack: ");
-        stk.display();
-        System.out.println("Stack after partial deletion: ");
-        stk.pop();
-        stk.pop();
-        stk.display();
+        st.display();
+        System.out.println("Stack after partial deletion:");
+        st.pop();
+        st.pop();
+        st.display();
         System.out.println("Stack after full deletion: ");
-        stk.pop();
-        stk.pop();
-        stk.pop();
-        stk.display();
-
+        st.pop();
+        st.pop();
+        st.pop();
+        st.display();
     }
 }

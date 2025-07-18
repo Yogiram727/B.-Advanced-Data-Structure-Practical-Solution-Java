@@ -3,7 +3,7 @@ package C_Queue;
 public class Practice4 {
     int n = 5;
     int[] queue = new int[n];
-    int rear = -1, front = -1;
+    int front = -1, rear = -1;
 
     public void enqueue(int value) {
         if ((rear + 1) % n == front) {
@@ -47,11 +47,11 @@ public class Practice4 {
 
     public static void main(String[] args) {
         Practice4 qu = new Practice4();
-        qu.enqueue(23);
-        qu.enqueue(33);
-        qu.enqueue(44);
-        qu.enqueue(55);
-        qu.enqueue(66);
+        qu.enqueue(1);
+        qu.enqueue(2);
+        qu.enqueue(3);
+        qu.enqueue(4);
+        qu.enqueue(5);
         System.out.println("Given Queue: ");
         qu.display();
         System.out.println("Queue after partial deletion: ");
@@ -63,6 +63,5 @@ public class Practice4 {
         qu.dequeue();
         qu.dequeue();
         qu.display();
-
     }
 }

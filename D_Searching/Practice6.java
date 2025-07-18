@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Practice6 {
+
     public int linearSearch(int arr[], int x) {
         int n = arr.length;
         for (int i = 0; i < n; i++) {
@@ -31,21 +32,18 @@ public class Practice6 {
     }
 
     public static void main(String[] args) {
-        Practice6 search = new Practice6();
+        Practice6 se = new Practice6();
         Scanner sc = new Scanner(System.in);
-        int value, result;
-        int arr[] = { 4, 5, 6, 7, 8 };
+        int arr[] = { 1, 3, 5, 6, 8, 33 };
         System.out.println("Given Array: " + Arrays.toString(arr));
-        System.out.println("Enter which value you want to search");
-        value = sc.nextInt();
-        result = search.linearSearch(arr, value);
-        // result=search.binarySearch(arr, value);
+        System.out.println("Enter the value to be searched in the given array: ");
+        int value = sc.nextInt();
+        // int result = se.linearSearch(arr, value);
+        int result = se.binarySearch(arr, value);
         if (result == -1) {
-            System.out.println("Given number is not the array: ");
-
+            System.out.println("Value is not in the array: ");
         } else {
-            System.out.println("Given number is at index " + result);
+            System.out.println("Value is at index:" + result);
         }
-        sc.close();
     }
 }
