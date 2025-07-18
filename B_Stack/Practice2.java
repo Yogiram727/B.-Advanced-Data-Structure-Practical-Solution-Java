@@ -1,62 +1,56 @@
 package B_Stack;
 
 public class Practice2 {
-    public class Node {
-        int data;
-        Node next;
-
-        Node(int item) {
-            this.data = item;
-            this.next = null;
-        }
-    }
-
-    Node top = null;
+    int n = 5;
+    int[] stack = new int[n];
+    int top = -1;
 
     public void push(int item) {
-        Node newNode = new Node(item);
-        newNode.next = top;
-        top = newNode;
+        if (top == n - 1) {
+            System.out.println("Stack Overflow");
+            return;
+        }
+        top++;
+        stack[top] = item;
     }
 
     public void pop() {
-        if (top == null) {
+        if (top == -1) {
             System.out.println("Stack is empty");
             return;
         }
-        top = top.next;
+        top--;
     }
 
     public void display() {
-        if (top == null) {
+        if (top == -1) {
             System.out.println("Stack is empty");
             return;
         }
-        Node ptr = top;
-        while (ptr != null) {
-            System.out.println(ptr.data);
-            ptr = ptr.next;
+        for (int i = top; i >= 0; i--) {
+            System.out.println(stack[i]);
         }
         System.out.println();
     }
 
     public static void main(String[] args) {
-        Practice2 st = new Practice2();
-        st.push(34);
-        st.push(55);
-        st.push(99);
-        st.push(44);
-        st.push(88);
+        Practice2 stk = new Practice2();
+        stk.push(3);
+        stk.push(4);
+        stk.push(5);
+        stk.push(6);
+        stk.push(7);
         System.out.println("Given Stack: ");
-        st.display();
-        System.out.println("Stack after partial deletion");
-        st.pop();
-        st.pop();
-        st.display();
+        stk.display();
+        System.out.println("Stack after paritial deletion: ");
+        stk.pop();
+        stk.pop();
+        stk.display();
         System.out.println("Stack after full deletion");
-        st.pop();
-        st.pop();
-        st.pop();
-        st.display();
+        stk.pop();
+        stk.pop();
+        stk.pop();
+        stk.display();
+
     }
 }
