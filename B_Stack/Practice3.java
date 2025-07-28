@@ -1,6 +1,7 @@
 package B_Stack;
 
 public class Practice3 {
+
     public class Node {
         int data;
         Node next;
@@ -9,6 +10,7 @@ public class Practice3 {
             this.data = item;
             this.next = null;
         }
+
     }
 
     Node top = null;
@@ -41,22 +43,23 @@ public class Practice3 {
     }
 
     public static void main(String[] args) {
-        Practice3 st = new Practice3();
-        st.push(3);
-        st.push(5);
-        st.push(6);
-        st.push(8);
-        st.push(9);
+        Practice3 stk = new Practice3();
+        stk.push(1);
+        stk.push(3);
+        stk.push(5);
+        stk.push(7);
+        stk.push(9);
         System.out.println("Given Stack: ");
-        st.display();
-        System.out.println("Stack after partial deletion:");
-        st.pop();
-        st.pop();
-        st.display();
+        stk.display();
+        System.out.println("Stack after partial deletion: ");
+        stk.pop();
+        stk.pop();
+        stk.display();
         System.out.println("Stack after full deletion: ");
-        st.pop();
-        st.pop();
-        st.pop();
-        st.display();
+        stk.pop();
+        stk.pop();
+        stk.pop();
+        stk.display();
     }
+
 }

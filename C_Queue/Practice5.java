@@ -1,6 +1,5 @@
-package C_Queue;
-
 public class Practice5 {
+
     public class Node {
         int data;
         Node next;
@@ -13,9 +12,8 @@ public class Practice5 {
 
     Node front = null, rear = null;
 
-    public void enqueue(int value) {
-        Node newNode = new Node(value);
-        newNode.next = null;
+    public void enqueue(int item) {
+        Node newNode = new Node(item);
         if (front == null) {
             front = newNode;
             rear = newNode;
@@ -25,7 +23,6 @@ public class Practice5 {
             rear = newNode;
             rear.next = front;
         }
-
     }
 
     public void dequeue() {
@@ -47,7 +44,6 @@ public class Practice5 {
             System.out.println("Queue is empty");
             return;
         }
-
         Node ptr = front;
         do {
             System.out.print(ptr.data + " ");
@@ -58,11 +54,11 @@ public class Practice5 {
 
     public static void main(String[] args) {
         Practice5 qu = new Practice5();
-        qu.enqueue(3);
-        qu.enqueue(5);
-        qu.enqueue(6);
-        qu.enqueue(7);
-        qu.enqueue(8);
+        qu.enqueue(34);
+        qu.enqueue(45);
+        qu.enqueue(66);
+        qu.enqueue(89);
+        qu.enqueue(32);
         System.out.println("Given Queue: ");
         qu.display();
         System.out.println("Queue after partial deletion: ");

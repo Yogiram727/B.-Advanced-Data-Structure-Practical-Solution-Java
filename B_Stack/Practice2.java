@@ -1,7 +1,6 @@
 package B_Stack;
 
 public class Practice2 {
-
     int n = 5;
     int[] stack = new int[n];
     int top = -1;
@@ -25,7 +24,7 @@ public class Practice2 {
 
     public void display() {
         if (top == -1) {
-            System.out.println("Stack is empty");
+            System.out.println("Stack is emtpy");
             return;
         }
         for (int i = top; i >= 0; i--) {
@@ -36,18 +35,18 @@ public class Practice2 {
 
     public static void main(String[] args) {
         Practice2 stk = new Practice2();
-        stk.push(33);
-        stk.push(44);
-        stk.push(55);
-        stk.push(66);
-        stk.push(77);
+        stk.push(1);
+        stk.push(2);
+        stk.push(3);
+        stk.push(5);
+        stk.push(5);
         System.out.println("Given Stack: ");
         stk.display();
-        System.out.println("Stack after partial deletion");
+        System.out.println("Stack after partial deletion: ");
         stk.pop();
         stk.pop();
         stk.display();
-        System.out.println("Stack after full deletion: ");
+        System.out.println("Stack after fully deletion: ");
         stk.pop();
         stk.pop();
         stk.pop();
