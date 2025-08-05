@@ -5,24 +5,24 @@ import java.util.Scanner;
 
 public class Practice6 {
 
-    public int linearSearch(int arr[], int x) {
+    public int linearSearch(int arr[], int value) {
         int n = arr.length;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == x) {
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == value) {
                 return i;
             }
         }
         return -1;
     }
 
-    public int binarySearch(int arr[], int x) {
+    public int binarySearch(int arr[], int value) {
         int n = arr.length;
         int first = 0, last = n - 1, middle;
         while (first <= last) {
             middle = first + (last - first) / 2;
-            if (arr[middle] == x) {
+            if (arr[middle] == value) {
                 return middle;
-            } else if (arr[middle] > x) {
+            } else if (arr[middle] >= value) {
                 last = middle - 1;
             } else {
                 first = middle + 1;
@@ -32,21 +32,20 @@ public class Practice6 {
     }
 
     public static void main(String[] args) {
-        Practice6 ser = new Practice6();
+        Practice6 se = new Practice6();
         Scanner sc = new Scanner(System.in);
-        int value, result;
-        int arr[] = { 1, 6, 7, 9, 19 };
+        int arr[] = { 4, 6, 8, 9, 19 };
         System.out.println("Given Array: " + Arrays.toString(arr));
-        System.out.println("Enter which element you want to search in the array");
-        value = sc.nextInt();
-        // result = ser.linearSearch(arr, value);
-        result = ser.binarySearch(arr, value);
-        if (result == -1) {
-            System.out.println("Value is not in the array");
-        } else {
-            System.out.println("Value is at index:" + result);
-        }
-        sc.close();
+        System.out.println("Enter the value to be searched in the array:");
+        int value = sc.nextInt();
 
+        // int result = se.linearSearch(arr, value);
+        int result = se.binarySearch(arr, value);
+        if (result == -1) {
+            System.out.println("Value not found in the array: ");
+
+        } else {
+            System.out.println("Value is at index: " + result);
+        }
     }
 }

@@ -1,5 +1,6 @@
-public class Practice5 {
+package C_Queue;
 
+public class Practice5 {
     public class Node {
         int data;
         Node next;
@@ -12,27 +13,12 @@ public class Practice5 {
 
     Node front = null, rear = null;
 
-    public void enqueue(int item) {
-        Node newNode = new Node(item);
+    public void enqueue(int value) {
+        Node newNode = new Node(value);
         if (front == null) {
             front = newNode;
             rear = newNode;
             rear.next = front;
-        } else {
-            rear.next = newNode;
-            rear = newNode;
-            rear.next = front;
-        }
-    }
-
-    public void dequeue() {
-        if (front == null) {
-            System.out.println("Queue is empty");
-            return;
-        }
-        if (front == rear) {
-            front = null;
-            rear = null;
         } else {
             front = front.next;
             rear.next = front;
@@ -41,7 +27,7 @@ public class Practice5 {
 
     public void display() {
         if (front == null) {
-            System.out.println("Queue is empty");
+            System.out.println("Queue is emtpy");
             return;
         }
         Node ptr = front;
@@ -53,22 +39,22 @@ public class Practice5 {
     }
 
     public static void main(String[] args) {
-        Practice5 qu = new Practice5();
-        qu.enqueue(34);
-        qu.enqueue(45);
-        qu.enqueue(66);
-        qu.enqueue(89);
-        qu.enqueue(32);
-        System.out.println("Given Queue: ");
-        qu.display();
+        Practice4 que = new Practice4();
+        que.enqueue(3);
+        que.enqueue(5);
+        que.enqueue(7);
+        que.enqueue(8);
+        que.enqueue(9);
+        System.out.println("Given Queue:");
+        que.display();
         System.out.println("Queue after partial deletion: ");
-        qu.dequeue();
-        qu.dequeue();
-        qu.display();
+        que.dequeue();
+        que.dequeue();
+        que.display();
         System.out.println("Queue after full deletion: ");
-        qu.dequeue();
-        qu.dequeue();
-        qu.dequeue();
-        qu.display();
+        que.dequeue();
+        que.dequeue();
+        que.dequeue();
+        que.display();
     }
 }
