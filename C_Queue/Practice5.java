@@ -1,6 +1,7 @@
 package C_Queue;
 
 public class Practice5 {
+
     public class Node {
         int data;
         Node next;
@@ -16,9 +17,24 @@ public class Practice5 {
     public void enqueue(int value) {
         Node newNode = new Node(value);
         if (front == null) {
+            rear = newNode;
             front = newNode;
+            rear.next = front;
+        } else {
+            rear.next = newNode;
             rear = newNode;
             rear.next = front;
+        }
+    }
+
+    public void dequeue() {
+        if (front == null) {
+            System.out.println("Queue is empty");
+            return;
+        }
+        if (rear == front) {
+            rear = null;
+            front = null;
         } else {
             front = front.next;
             rear.next = front;
@@ -27,7 +43,7 @@ public class Practice5 {
 
     public void display() {
         if (front == null) {
-            System.out.println("Queue is emtpy");
+            System.out.println("Queue is empty");
             return;
         }
         Node ptr = front;
@@ -39,13 +55,13 @@ public class Practice5 {
     }
 
     public static void main(String[] args) {
-        Practice4 que = new Practice4();
-        que.enqueue(3);
-        que.enqueue(5);
-        que.enqueue(7);
-        que.enqueue(8);
-        que.enqueue(9);
-        System.out.println("Given Queue:");
+        Practice5 que = new Practice5();
+        que.enqueue(11);
+        que.enqueue(33);
+        que.enqueue(44);
+        que.enqueue(55);
+        que.enqueue(2);
+        System.out.println("Given Queue: ");
         que.display();
         System.out.println("Queue after partial deletion: ");
         que.dequeue();
@@ -56,5 +72,7 @@ public class Practice5 {
         que.dequeue();
         que.dequeue();
         que.display();
+        System.out.println();
+
     }
 }

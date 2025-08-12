@@ -22,7 +22,7 @@ public class Practice6 {
             middle = first + (last - first) / 2;
             if (arr[middle] == value) {
                 return middle;
-            } else if (arr[middle] >= value) {
+            } else if (arr[middle] > value) {
                 last = middle - 1;
             } else {
                 first = middle + 1;
@@ -34,15 +34,15 @@ public class Practice6 {
     public static void main(String[] args) {
         Practice6 se = new Practice6();
         Scanner sc = new Scanner(System.in);
-        int arr[] = { 4, 6, 8, 9, 19 };
+        int value, result;
+        int arr[] = { 2, 4, 5, 7, 8 };
         System.out.println("Given Array: " + Arrays.toString(arr));
-        System.out.println("Enter the value to be searched in the array:");
-        int value = sc.nextInt();
-
-        // int result = se.linearSearch(arr, value);
-        int result = se.binarySearch(arr, value);
+        System.out.println("Enter the value to be searched : ");
+        value = sc.nextInt();
+        // result = se.linearSearch(arr, value);
+        result = se.binarySearch(arr, value);
         if (result == -1) {
-            System.out.println("Value not found in the array: ");
+            System.out.println("Value not found: ");
 
         } else {
             System.out.println("Value is at index: " + result);
