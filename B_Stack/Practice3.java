@@ -43,11 +43,11 @@ public class Practice3 {
 
     public static void main(String[] args) {
         Practice3 st = new Practice3();
+        st.push(8);
+        st.push(7);
+        st.push(6);
+        st.push(5);
         st.push(4);
-        st.push(3);
-        st.push(2);
-        st.push(1);
-        st.push(0);
         System.out.println("Given Stack: ");
         st.display();
         System.out.println("Stack after partial deletion: ");
@@ -59,6 +59,6 @@ public class Practice3 {
         st.pop();
         st.pop();
         st.display();
-        System.out.println();
+
     }
 }

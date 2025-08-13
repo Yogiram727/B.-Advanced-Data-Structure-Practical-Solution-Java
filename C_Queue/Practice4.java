@@ -47,11 +47,11 @@ public class Practice4 {
 
     public static void main(String[] args) {
         Practice4 qu = new Practice4();
-        qu.enqueue(1);
-        qu.enqueue(2);
         qu.enqueue(3);
         qu.enqueue(4);
+        qu.enqueue(5);
         qu.enqueue(6);
+        qu.enqueue(7);
         System.out.println("Given Queue: ");
         qu.display();
         System.out.println("Queue after partial deletion: ");

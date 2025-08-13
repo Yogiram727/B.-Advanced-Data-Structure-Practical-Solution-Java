@@ -20,7 +20,7 @@ public class Practice7 {
         for (int i = 0; i < n - 1; i++) {
             int minIndex = i;
             for (int j = i + 1; j < n; j++) {
-                if (arr[j] < minIndex) {
+                if (arr[j] < arr[minIndex]) {
                     minIndex = j;
                 }
             }
@@ -28,15 +28,14 @@ public class Practice7 {
                 int temp = arr[i];
                 arr[i] = arr[minIndex];
                 arr[minIndex] = temp;
-
             }
         }
     }
 
     public static void main(String[] args) {
         Practice7 sort = new Practice7();
-        int arr[] = { 5, 3, 2, 1, 8 };
-        System.out.println("Given Array:" + Arrays.toString(arr));
+        int arr[] = { 8, 4, 3, 2, 1 };
+        System.out.println("Given Unsorted Array: " + Arrays.toString(arr));
         // sort.bubbleSort(arr);
         sort.selectionSort(arr);
         System.out.println("Array after sorting: " + Arrays.toString(arr));
