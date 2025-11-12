@@ -1,6 +1,7 @@
 package C_Queue;
 
 public class Practice5 {
+
     public class Node {
         int data;
         Node next;
@@ -54,23 +55,23 @@ public class Practice5 {
     }
 
     public static void main(String[] args) {
-        Practice5 qu = new Practice5();
-        qu.enqueue(88);
-        qu.enqueue(99);
-        qu.enqueue(111);
-        qu.enqueue(222);
-        qu.enqueue(444);
+        Practice5 q = new Practice5();
+        q.enqueue(5);
+        q.enqueue(6);
+        q.enqueue(7);
+        q.enqueue(8);
+        q.enqueue(9);
         System.out.println("Given Queue: ");
-        qu.display();
+        q.display();
         System.out.println("Queue after partial deletion: ");
-        qu.dequeue();
-        qu.dequeue();
-        qu.display();
+        q.dequeue();
+        q.dequeue();
+        q.display();
         System.out.println("Queue after full deletion: ");
-        qu.dequeue();
-        qu.dequeue();
-        qu.dequeue();
-        qu.display();
+        q.dequeue();
+        q.dequeue();
+        q.dequeue();
+        q.display();
         System.out.println();
     }
 }

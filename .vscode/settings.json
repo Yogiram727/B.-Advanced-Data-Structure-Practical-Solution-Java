@@ -8,5 +8,6 @@
     "type_traits": "cpp",
     "utility": "cpp",
     "ostream": "cpp"
-  }
+  },
+  "java.debug.settings.onBuildFailureProceed": true
 }

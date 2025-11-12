@@ -1,4 +1,3 @@
-package B_Stack;
 
 public class B_StackUsingLinkedList {
     public class Node {

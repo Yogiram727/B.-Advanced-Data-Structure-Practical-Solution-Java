@@ -1,13 +1,12 @@
-package B_Stack;
-
 public class Practice2 {
+
     int n = 5;
     int[] stack = new int[n];
     int top = -1;
 
     public void push(int item) {
         if (top == n - 1) {
-            System.out.println("Stack Overflow: ");
+            System.out.println("Stack is full");
             return;
         }
         top++;
@@ -35,11 +34,11 @@ public class Practice2 {
 
     public static void main(String[] args) {
         Practice2 stk = new Practice2();
-        stk.push(2);
-        stk.push(3);
-        stk.push(4);
         stk.push(5);
-        stk.push(6);
+        stk.push(4);
+        stk.push(3);
+        stk.push(2);
+        stk.push(1);
         System.out.println("Given Stack: ");
         stk.display();
         System.out.println("Stack after partial deletion: ");

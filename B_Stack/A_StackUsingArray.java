@@ -1,4 +1,3 @@
-package B_Stack;
 
 public class A_StackUsingArray {
 

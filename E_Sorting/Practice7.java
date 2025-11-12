@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Practice7 {
 
@@ -17,7 +18,7 @@ public class Practice7 {
 
     public void selectionSort(int arr[]) {
         int n = arr.length;
-        for (int i = 0; i < n - 1; i++) {
+        for (int i = 0; i < n; i++) {
             int minIndex = i;
             for (int j = i + 1; j < n; j++) {
                 if (arr[j] < arr[minIndex]) {
@@ -34,11 +35,15 @@ public class Practice7 {
 
     public static void main(String[] args) {
         Practice7 sort = new Practice7();
-        int arr[] = { 8, 4, 3, 2, 1 };
-        System.out.println("Given Unsorted Array: " + Arrays.toString(arr));
+        Scanner sc = new Scanner(System.in);
+        int arr[] = new int[5];
+        System.out.println("Enter any five unsorted element: ");
+        for (int i = 0; i < 5; i++) {
+            arr[i] = sc.nextInt();
+        }
+        System.out.println("Array before sorting: " + Arrays.toString(arr));
         // sort.bubbleSort(arr);
         sort.selectionSort(arr);
         System.out.println("Array after sorting: " + Arrays.toString(arr));
-        System.out.println();
     }
 }
