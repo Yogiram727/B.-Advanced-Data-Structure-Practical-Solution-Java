@@ -6,7 +6,7 @@ public class Practice2 {
 
     public void push(int item) {
         if (top == n - 1) {
-            System.out.println("Stack is full");
+            System.out.println("Stack Overflow! ");
             return;
         }
         top++;
@@ -33,23 +33,23 @@ public class Practice2 {
     }
 
     public static void main(String[] args) {
-        Practice2 stk = new Practice2();
-        stk.push(5);
-        stk.push(4);
-        stk.push(3);
-        stk.push(2);
-        stk.push(1);
+        Practice2 st = new Practice2();
+        st.push(1);
+        st.push(3);
+        st.push(5);
+        st.push(6);
+        st.push(8);
         System.out.println("Given Stack: ");
-        stk.display();
+        st.display();
         System.out.println("Stack after partial deletion: ");
-        stk.pop();
-        stk.pop();
-        stk.display();
+        st.pop();
+        st.pop();
+        st.pop();
+        st.display();
         System.out.println("Stack after full deletion: ");
-        stk.pop();
-        stk.pop();
-        stk.pop();
-        stk.display();
+        st.pop();
+        st.pop();
+        st.display();
 
     }
 }

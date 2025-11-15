@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Practice1 {
 
-    public class Node {
+    class Node {
         int data;
         Node next;
 
@@ -42,6 +42,7 @@ public class Practice1 {
         Node current = head;
         while (current != null && current.data != prev) {
             current = current.next;
+
         }
         if (current == null) {
             System.out.println("Node not found");
@@ -90,10 +91,11 @@ public class Practice1 {
         secondLast.next = null;
     }
 
-    public static void main(String[] args) {
+    public static void main(String args[]) {
         Practice1 list = new Practice1();
         Scanner sc = new Scanner(System.in);
         int value, prev, newValue;
+
         System.out.println("Enter any five element in the list");
         for (int i = 0; i < 5; i++) {
             value = sc.nextInt();
@@ -103,10 +105,8 @@ public class Practice1 {
 
         System.out.println("Given List: ");
         list.display();
-
         System.out.println("Enter after which value you want to insert a new value: ");
         prev = sc.nextInt();
-
         System.out.println("Enter the new value that you want to insert: ");
         newValue = sc.nextInt();
 

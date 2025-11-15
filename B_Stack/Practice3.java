@@ -40,22 +40,23 @@ public class Practice3 {
     }
 
     public static void main(String[] args) {
-        Practice3 st = new Practice3();
-        st.push(9);
-        st.push(8);
-        st.push(7);
-        st.push(6);
-        st.push(5);
+        Practice3 stk = new Practice3();
+        stk.push(5);
+        stk.push(4);
+        stk.push(3);
+        stk.push(2);
+        stk.push(1);
         System.out.println("Given Stack: ");
-        st.display();
+        stk.display();
         System.out.println("Stack after partial deletion: ");
-        st.pop();
-        st.pop();
-        st.display();
+        stk.pop();
+        stk.pop();
+        stk.display();
         System.out.println("Stack after full deletion: ");
-        st.pop();
-        st.pop();
-        st.pop();
-        st.display();
+        stk.pop();
+        stk.pop();
+        stk.pop();
+        stk.display();
+
     }
 }
