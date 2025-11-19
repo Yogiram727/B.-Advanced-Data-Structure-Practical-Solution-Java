@@ -4,8 +4,8 @@ public class Practice3 {
         int data;
         Node next;
 
-        Node(int item) {
-            this.data = item;
+        Node(int value) {
+            this.data = value;
             this.next = null;
         }
     }
@@ -40,23 +40,23 @@ public class Practice3 {
     }
 
     public static void main(String[] args) {
-        Practice3 stk = new Practice3();
-        stk.push(5);
-        stk.push(4);
-        stk.push(3);
-        stk.push(2);
-        stk.push(1);
+        Practice3 st = new Practice3();
+        st.push(5);
+        st.push(4);
+        st.push(3);
+        st.push(2);
+        st.push(1);
         System.out.println("Given Stack: ");
-        stk.display();
+        st.display();
         System.out.println("Stack after partial deletion: ");
-        stk.pop();
-        stk.pop();
-        stk.display();
+        st.pop();
+        st.pop();
+        st.display();
         System.out.println("Stack after full deletion: ");
-        stk.pop();
-        stk.pop();
-        stk.pop();
-        stk.display();
+        st.pop();
+        st.pop();
+        st.pop();
+        st.display();
 
     }
 }
