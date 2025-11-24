@@ -1,3 +1,5 @@
+package C_Queue;
+
 public class Practice5 {
 
     public class Node {
@@ -30,6 +32,7 @@ public class Practice5 {
             System.out.println("Queue is empty");
             return;
         }
+
         if (front == rear) {
             front = null;
             rear = null;
@@ -64,9 +67,9 @@ public class Practice5 {
         System.out.println("Queue after partial deletion: ");
         qu.dequeue();
         qu.dequeue();
+        qu.dequeue();
         qu.display();
         System.out.println("Queue after full deletion: ");
-        qu.dequeue();
         qu.dequeue();
         qu.dequeue();
         qu.display();
