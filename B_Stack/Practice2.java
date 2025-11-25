@@ -1,11 +1,12 @@
 public class Practice2 {
+
     int n = 5;
-    int top = -1;
     int[] stack = new int[n];
+    int top = -1;
 
     public void push(int item) {
         if (top == n - 1) {
-            System.out.println("Stack Overflow");
+            System.out.println("Stack overflow");
             return;
         }
         top++;
@@ -49,7 +50,6 @@ public class Practice2 {
         stk.pop();
         stk.pop();
         stk.display();
-
+        System.out.println();
     }
-
 }

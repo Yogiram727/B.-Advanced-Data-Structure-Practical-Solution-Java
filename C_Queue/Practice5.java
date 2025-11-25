@@ -32,7 +32,6 @@ public class Practice5 {
             System.out.println("Queue is empty");
             return;
         }
-
         if (front == rear) {
             front = null;
             rear = null;
@@ -40,6 +39,7 @@ public class Practice5 {
             front = front.next;
             rear.next = front;
         }
+
     }
 
     public void display() {
@@ -57,7 +57,7 @@ public class Practice5 {
 
     public static void main(String[] args) {
         Practice5 qu = new Practice5();
-        qu.enqueue(5);
+        qu.enqueue(4);
         qu.enqueue(6);
         qu.enqueue(7);
         qu.enqueue(8);
@@ -67,12 +67,13 @@ public class Practice5 {
         System.out.println("Queue after partial deletion: ");
         qu.dequeue();
         qu.dequeue();
-        qu.dequeue();
         qu.display();
         System.out.println("Queue after full deletion: ");
         qu.dequeue();
         qu.dequeue();
+        qu.dequeue();
         qu.display();
         System.out.println();
+
     }
 }

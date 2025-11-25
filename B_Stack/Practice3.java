@@ -20,7 +20,7 @@ public class Practice3 {
 
     public void pop() {
         if (top == null) {
-            System.out.println("Stack is empty");
+            System.out.println("Stack is empty ");
             return;
         }
         top = top.next;
@@ -41,22 +41,21 @@ public class Practice3 {
 
     public static void main(String[] args) {
         Practice3 stk = new Practice3();
-        stk.push(1);
-        stk.push(2);
-        stk.push(3);
-        stk.push(4);
+        stk.push(9);
+        stk.push(8);
+        stk.push(7);
+        stk.push(6);
         stk.push(5);
         System.out.println("Given Stack: ");
         stk.display();
         System.out.println("Stack after partial deletion: ");
         stk.pop();
         stk.pop();
-        stk.pop();
         stk.display();
         System.out.println("Stack after full deletion: ");
         stk.pop();
         stk.pop();
+        stk.pop();
         stk.display();
-        System.out.println();
     }
 }

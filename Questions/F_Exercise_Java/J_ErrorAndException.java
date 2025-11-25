@@ -1,4 +1,4 @@
-package Questions;
+package Questions.F_Exercise_Java;
 
 public class J_ErrorAndException {
     public static void main(String[] args) {

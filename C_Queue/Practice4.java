@@ -8,12 +8,12 @@ public class Practice4 {
 
     public void enqueue(int value) {
         if ((rear + 1) % n == front) {
-            System.out.println("Queue is full");
+            System.out.println("Queue is full ");
             return;
         }
         if (front == -1) {
-            front = 0;
             rear = 0;
+            front = 0;
         } else {
             rear = (rear + 1) % n;
         }
@@ -25,9 +25,9 @@ public class Practice4 {
             System.out.println("Queue is empty");
             return;
         }
-        if (rear == front) {
-            rear = -1;
+        if (front == rear) {
             front = -1;
+            rear = -1;
         } else {
             front = (front + 1) % n;
         }
@@ -44,6 +44,7 @@ public class Practice4 {
             i = (i + 1) % n;
         } while (i != (rear + 1) % n);
         System.out.println();
+
     }
 
     public static void main(String[] args) {
@@ -64,6 +65,6 @@ public class Practice4 {
         qu.dequeue();
         qu.dequeue();
         qu.display();
-
+        System.out.println();
     }
 }

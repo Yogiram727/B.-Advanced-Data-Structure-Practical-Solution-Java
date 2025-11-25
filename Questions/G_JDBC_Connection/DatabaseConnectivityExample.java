@@ -1,4 +1,4 @@
-package Questions.F_JDBC_Connection;
+package Questions.G_JDBC_Connection;
 
 import java.sql.*;
 

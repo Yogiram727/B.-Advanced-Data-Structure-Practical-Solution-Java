@@ -1,4 +1,4 @@
-package Questions;
+package Questions.F_Exercise_Java;
 
 import java.util.Scanner;
 
