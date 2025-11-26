@@ -39,7 +39,6 @@ public class Practice5 {
             front = front.next;
             rear.next = front;
         }
-
     }
 
     public void display() {
@@ -53,15 +52,16 @@ public class Practice5 {
             ptr = ptr.next;
         } while (ptr != front);
         System.out.println();
+
     }
 
     public static void main(String[] args) {
         Practice5 qu = new Practice5();
-        qu.enqueue(4);
-        qu.enqueue(6);
         qu.enqueue(7);
         qu.enqueue(8);
         qu.enqueue(9);
+        qu.enqueue(10);
+        qu.enqueue(11);
         System.out.println("Given Queue: ");
         qu.display();
         System.out.println("Queue after partial deletion: ");
@@ -71,9 +71,8 @@ public class Practice5 {
         System.out.println("Queue after full deletion: ");
         qu.dequeue();
         qu.dequeue();
+
         qu.dequeue();
         qu.display();
-        System.out.println();
-
     }
 }

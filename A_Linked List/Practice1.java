@@ -67,7 +67,7 @@ public class Practice1 {
 
     public void delStart() {
         if (head == null) {
-            System.out.println("List is empty");
+            System.out.println("list is empty");
             return;
         }
         head = head.next;
@@ -94,7 +94,6 @@ public class Practice1 {
         Practice1 list = new Practice1();
         Scanner sc = new Scanner(System.in);
         int value, prev, newValue;
-
         System.out.println("Enter any five element in the list");
         for (int i = 0; i < 5; i++) {
             value = sc.nextInt();
@@ -106,6 +105,7 @@ public class Practice1 {
 
         System.out.println("Enter after which value you want to insert a new value: ");
         prev = sc.nextInt();
+
         System.out.println("Enter the new value that you want to insert: ");
         newValue = sc.nextInt();
 
@@ -119,7 +119,8 @@ public class Practice1 {
 
         System.out.println("List after the deletion of the last value: ");
         list.delEnd();
+        ;
         list.display();
-        System.out.println();
+        sc.close();
     }
 }

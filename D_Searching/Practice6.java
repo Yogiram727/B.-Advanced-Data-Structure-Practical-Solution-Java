@@ -28,7 +28,6 @@ public class Practice6 {
             } else {
                 first = middle + 1;
             }
-
         }
         return -1;
     }
@@ -36,18 +35,18 @@ public class Practice6 {
     public static void main(String[] args) {
         Practice6 se = new Practice6();
         Scanner sc = new Scanner(System.in);
-        int arr[] = { 3, 5, 6, 7, 99, 294 };
+        int arr[] = { 2, 4, 6, 7, 234 };
         System.out.println("Given Array: " + Arrays.toString(arr));
-        System.out.println("Enter the value that you want to search: ");
+        System.out.println("Enter the value that you want to search in this array ");
         int value = sc.nextInt();
-        int result = se.linearSearch(arr, value);
-        // int result=se.binarySearch(arr, value);
+        // int result = se.linearSearch(arr, value);
+        int result = se.binarySearch(arr, value);
         if (result == -1) {
-            System.out.println("Value is not in the given array");
+            System.out.println("Value not found");
         } else {
             System.out.println("Value is at index: " + result);
         }
         System.out.println();
-
+        sc.close();
     }
 }
