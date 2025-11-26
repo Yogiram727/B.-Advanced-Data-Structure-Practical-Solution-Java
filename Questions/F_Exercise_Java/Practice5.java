@@ -4,40 +4,40 @@ import java.util.Scanner;
 
 public class Practice5 {
 
-    public void matrixMultiplicaiton() {
+    public void multiplicationMatrix() {
         Scanner sc = new Scanner(System.in);
         int rows1, cols1, rows2, cols2;
-        System.out.println("Enter the number of rows and columns of first matrix: ");
+        System.out.println("Enter the number of rows and column of first matrix: ");
         rows1 = sc.nextInt();
         cols1 = sc.nextInt();
-        System.out.println("Enter the number of rows and columns of second matrix: ");
+
+        System.out.println("Enter the numner of rows and column of second matrix: ");
         rows2 = sc.nextInt();
         cols2 = sc.nextInt();
 
         if (cols1 != rows2) {
-            System.out.println("Matrix Multiplication is not possible! ");
+            System.out.println("Matrix multiplication is not possible");
             return;
         }
-
         int[][] matrix1 = new int[rows1][cols1];
         int[][] matrix2 = new int[rows2][cols2];
         int[][] result = new int[rows1][cols2];
 
-        System.out.println("Enter the elements of the first matrix: ");
+        System.out.println("Enter the elements of the first matrix");
         for (int i = 0; i < rows1; i++) {
             for (int j = 0; j < cols1; j++) {
                 matrix1[i][j] = sc.nextInt();
             }
         }
 
-        System.out.println("Enter the elements of the second matrix: ");
+        System.out.println("Enter the elements of the second matrix");
         for (int i = 0; i < rows2; i++) {
             for (int j = 0; j < cols2; j++) {
                 matrix2[i][j] = sc.nextInt();
             }
         }
 
-        // matrix multiplication
+        // multiplication
         for (int i = 0; i < rows1; i++) {
             for (int j = 0; j < cols2; j++) {
                 result[i][j] = 0;
@@ -47,18 +47,17 @@ public class Practice5 {
             }
         }
 
-        System.out.println("Matrix after multiplication: ");
+        System.out.println("Matrix after multiplication is: ");
         for (int i = 0; i < rows1; i++) {
             for (int j = 0; j < cols2; j++) {
                 System.out.print(result[i][j] + " ");
             }
             System.out.println();
         }
-
     }
 
     public static void main(String[] args) {
         Practice5 mul = new Practice5();
-        mul.matrixMultiplicaiton();
+        mul.multiplicationMatrix();
     }
 }
