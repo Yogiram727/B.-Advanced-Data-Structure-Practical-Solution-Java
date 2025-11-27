@@ -2,16 +2,14 @@ package Questions.F_Exercise_Java;
 
 import java.util.Scanner;
 
-// a whole number greater than 1 that cannot be exactly divided by any whole number other than itself and 1 (e.g. 2, 3, 5, 7, 11).
-public class G_PrimeCheck {
+public class Practice7 {
+
     public boolean checkPrime(int num) {
         if (num <= 1) {
-
             return false;
         }
         for (int i = 2; i < num - 1; i++) {
             if (num % i == 0) {
-
                 return false;
             }
         }
@@ -19,14 +17,14 @@ public class G_PrimeCheck {
     }
 
     public static void main(String[] args) {
-        G_PrimeCheck obj = new G_PrimeCheck();
+        Practice7 pcheck = new Practice7();
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter any number : ");
+        System.out.println("Enter any number: ");
         int num = sc.nextInt();
-        if (obj.checkPrime(num)) {
-            System.out.println(num + " is prime number");
+        if (pcheck.checkPrime(num)) {
+            System.out.println("Number is prime");
         } else {
-            System.out.println(num + " is not a prime number");
+            System.out.println("Number is not prime");
         }
         sc.close();
     }
