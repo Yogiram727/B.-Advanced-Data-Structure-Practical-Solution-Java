@@ -35,9 +35,9 @@ public class Practice6 {
     public static void main(String[] args) {
         Practice6 se = new Practice6();
         Scanner sc = new Scanner(System.in);
-        int arr[] = { 2, 4, 6, 7, 234 };
+        int arr[] = { 1, 2, 4, 6, 77, 88, 99 };
         System.out.println("Given Array: " + Arrays.toString(arr));
-        System.out.println("Enter the value that you want to search in this array ");
+        System.out.println("Enter the value that you want to search in the given array: ");
         int value = sc.nextInt();
         // int result = se.linearSearch(arr, value);
         int result = se.binarySearch(arr, value);
@@ -47,6 +47,5 @@ public class Practice6 {
             System.out.println("Value is at index: " + result);
         }
         System.out.println();
-        sc.close();
     }
 }

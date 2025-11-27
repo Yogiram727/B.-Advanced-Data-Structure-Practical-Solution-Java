@@ -1,6 +1,7 @@
 package C_Queue;
 
 public class Practice4 {
+
     int n = 5;
     int[] queue = new int[n];
     int front = -1, rear = -1;
@@ -11,15 +12,15 @@ public class Practice4 {
             return;
         }
         if (front == -1) {
-            rear = 0;
             front = 0;
+            rear = 0;
         } else {
             rear = (rear + 1) % n;
         }
         queue[rear] = value;
     }
 
-    public void dequeu() {
+    public void dequeue() {
         if (front == -1) {
             System.out.println("Queue is empty");
             return;
@@ -46,23 +47,23 @@ public class Practice4 {
     }
 
     public static void main(String[] args) {
-        Practice4 que = new Practice4();
-        que.enqueue(1);
-        que.enqueue(2);
-        que.enqueue(3);
-        que.enqueue(4);
-        que.enqueue(5);
+        Practice4 qu = new Practice4();
+        qu.enqueue(1);
+        qu.enqueue(2);
+        qu.enqueue(3);
+        qu.enqueue(4);
+        qu.enqueue(5);
         System.out.println("Given Queue: ");
-        que.display();
-        System.out.println("Queue after partial deletion:");
-        que.dequeu();
-        que.dequeu();
-        que.display();
+        qu.display();
+        System.out.println("Queue after partial deletion: ");
+        qu.dequeue();
+        qu.dequeue();
+        qu.display();
         System.out.println("Queue after full deletion: ");
-        que.dequeu();
-        que.dequeu();
-        que.dequeu();
-        que.display();
-
+        qu.dequeue();
+        qu.dequeue();
+        qu.dequeue();
+        qu.display();
+        System.out.println();
     }
 }

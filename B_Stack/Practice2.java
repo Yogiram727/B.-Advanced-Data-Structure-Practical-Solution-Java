@@ -44,11 +44,12 @@ public class Practice2 {
         System.out.println("Stack after partial deletion: ");
         stk.pop();
         stk.pop();
+        stk.pop();
         stk.display();
         System.out.println("Stack after full deletion: ");
         stk.pop();
         stk.pop();
-        stk.pop();
         stk.display();
+        System.out.println();
     }
 }

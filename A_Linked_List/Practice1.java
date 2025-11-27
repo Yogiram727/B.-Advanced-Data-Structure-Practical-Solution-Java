@@ -1,7 +1,8 @@
+package A_Linked_List;
+
 import java.util.Scanner;
 
 public class Practice1 {
-
     public class Node {
         int data;
         Node next;
@@ -36,7 +37,7 @@ public class Practice1 {
 
     public void insertAfter(int prev, int newValue) {
         if (head == null) {
-            System.out.println("List is empty");
+            System.out.println("list is empty");
             return;
         }
         Node current = head;
@@ -44,7 +45,7 @@ public class Practice1 {
             current = current.next;
         }
         if (current == null) {
-            System.out.println("Node not found");
+            System.out.println("Value not found");
             return;
         }
         Node newNode = new Node(newValue);
@@ -67,7 +68,7 @@ public class Practice1 {
 
     public void delStart() {
         if (head == null) {
-            System.out.println("list is empty");
+            System.out.println("List is empty");
             return;
         }
         head = head.next;
@@ -94,7 +95,7 @@ public class Practice1 {
         Practice1 list = new Practice1();
         Scanner sc = new Scanner(System.in);
         int value, prev, newValue;
-        System.out.println("Enter any five element in the list");
+        System.out.println("Enter any five element in the list: ");
         for (int i = 0; i < 5; i++) {
             value = sc.nextInt();
             // list.insertAtFirst(value);
@@ -119,8 +120,8 @@ public class Practice1 {
 
         System.out.println("List after the deletion of the last value: ");
         list.delEnd();
-        ;
         list.display();
-        sc.close();
+        System.out.println();
     }
+
 }
