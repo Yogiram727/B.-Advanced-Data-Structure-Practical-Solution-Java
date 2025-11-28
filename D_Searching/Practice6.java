@@ -29,15 +29,16 @@ public class Practice6 {
                 first = middle + 1;
             }
         }
+
         return -1;
     }
 
     public static void main(String[] args) {
         Practice6 se = new Practice6();
         Scanner sc = new Scanner(System.in);
-        int arr[] = { 1, 2, 4, 6, 77, 88, 99 };
+        int arr[] = { 2, 4, 6, 7, 8, 44, 55, 77 };
         System.out.println("Given Array: " + Arrays.toString(arr));
-        System.out.println("Enter the value that you want to search in the given array: ");
+        System.out.println("Enter which value you want to search: ");
         int value = sc.nextInt();
         // int result = se.linearSearch(arr, value);
         int result = se.binarySearch(arr, value);

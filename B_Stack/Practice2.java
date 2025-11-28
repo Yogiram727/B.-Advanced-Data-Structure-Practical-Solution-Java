@@ -1,3 +1,5 @@
+package B_Stack;
+
 public class Practice2 {
 
     int n = 5;
@@ -39,9 +41,10 @@ public class Practice2 {
         stk.push(3);
         stk.push(4);
         stk.push(5);
+
         System.out.println("Given Stack: ");
         stk.display();
-        System.out.println("Stack after partial deletion: ");
+        System.out.println("Stack after partial deletiOn: ");
         stk.pop();
         stk.pop();
         stk.pop();
@@ -49,6 +52,7 @@ public class Practice2 {
         System.out.println("Stack after full deletion: ");
         stk.pop();
         stk.pop();
+
         stk.display();
         System.out.println();
     }

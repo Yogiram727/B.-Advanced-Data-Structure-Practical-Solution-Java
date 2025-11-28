@@ -3,6 +3,7 @@ package A_Linked_List;
 import java.util.Scanner;
 
 public class Practice1 {
+
     public class Node {
         int data;
         Node next;
@@ -11,6 +12,7 @@ public class Practice1 {
             this.data = value;
             this.next = null;
         }
+
     }
 
     Node head = null;
@@ -37,7 +39,7 @@ public class Practice1 {
 
     public void insertAfter(int prev, int newValue) {
         if (head == null) {
-            System.out.println("list is empty");
+            System.out.println("List is empty");
             return;
         }
         Node current = head;
@@ -51,19 +53,6 @@ public class Practice1 {
         Node newNode = new Node(newValue);
         newNode.next = current.next;
         current.next = newNode;
-    }
-
-    public void display() {
-        if (head == null) {
-            System.out.println("List is empty");
-            return;
-        }
-        Node ptr = head;
-        while (ptr != null) {
-            System.out.print(ptr.data + " ");
-            ptr = ptr.next;
-        }
-        System.out.println();
     }
 
     public void delStart() {
@@ -81,7 +70,6 @@ public class Practice1 {
         }
         if (head.next == null) {
             head = null;
-            return;
         }
         Node last = head, secondLast = null;
         while (last.next != null) {
@@ -89,6 +77,19 @@ public class Practice1 {
             last = last.next;
         }
         secondLast.next = null;
+    }
+
+    public void display() {
+        if (head == null) {
+            System.out.println("list is empty");
+            return;
+        }
+        Node ptr = head;
+        while (ptr != null) {
+            System.out.print(ptr.data + " ");
+            ptr = ptr.next;
+        }
+        System.out.println();
     }
 
     public static void main(String[] args) {
@@ -103,10 +104,8 @@ public class Practice1 {
         }
         System.out.println("Given List: ");
         list.display();
-
         System.out.println("Enter after which value you want to insert a new value: ");
         prev = sc.nextInt();
-
         System.out.println("Enter the new value that you want to insert: ");
         newValue = sc.nextInt();
 
@@ -122,6 +121,6 @@ public class Practice1 {
         list.delEnd();
         list.display();
         System.out.println();
+        sc.close();
     }
-
 }
