@@ -4,13 +4,14 @@ public class Practice2 {
     int[] stack = new int[n];
     int top = -1;
 
-    public void push(int value) {
+    public void push(int item) {
         if (top == n - 1) {
-            System.out.println("Stack Overflow");
+            System.out.println("Stack overflow");
             return;
         }
         top++;
-        stack[top] = value;
+        stack[top] = item;
+
     }
 
     public void pop() {
@@ -19,7 +20,6 @@ public class Practice2 {
             return;
         }
         top--;
-
     }
 
     public void display() {
@@ -31,7 +31,6 @@ public class Practice2 {
             System.out.println(stack[i]);
         }
         System.out.println();
-
     }
 
     public static void main(String[] args) {
@@ -52,6 +51,5 @@ public class Practice2 {
         stk.pop();
         stk.pop();
         stk.display();
-
     }
 }

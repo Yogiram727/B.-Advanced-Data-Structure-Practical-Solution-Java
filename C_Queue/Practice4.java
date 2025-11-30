@@ -1,7 +1,6 @@
 package C_Queue;
 
 public class Practice4 {
-
     int n = 5;
     int[] queue = new int[n];
     int front = -1, rear = -1;
@@ -12,13 +11,12 @@ public class Practice4 {
             return;
         }
         if (front == -1) {
-            front = 0;
             rear = 0;
+            front = 0;
         } else {
             rear = (rear + 1) % n;
         }
         queue[rear] = value;
-
     }
 
     public void dequeue() {

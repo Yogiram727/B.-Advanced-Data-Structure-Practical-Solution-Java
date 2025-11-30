@@ -24,7 +24,7 @@ public class Practice7 {
                     minIndex = j;
                 }
             }
-            if (i != minIndex) {
+            if (minIndex != i) {
                 int temp = arr[i];
                 arr[i] = arr[minIndex];
                 arr[minIndex] = temp;
@@ -34,11 +34,10 @@ public class Practice7 {
 
     public static void main(String[] args) {
         Practice7 sor = new Practice7();
-        int arr[] = { 8, 42, 12, 6, 1 };
+        int arr[] = { 4, 3, 1, 64, 0 };
         System.out.println("Given Array: " + Arrays.toString(arr));
         // sor.bubbleSort(arr);
         sor.selectionSort(arr);
         System.out.println("Array after sorting: " + Arrays.toString(arr));
-
     }
 }
