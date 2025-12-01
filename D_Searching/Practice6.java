@@ -35,19 +35,19 @@ public class Practice6 {
     public static void main(String[] args) {
         Practice6 se = new Practice6();
         Scanner sc = new Scanner(System.in);
-        int arr[] = { 1, 36, 7, 5, 34, 734, 454 };
-        Arrays.sort(arr);
-        System.out.println("Given Array: " + Arrays.toString(arr));
-        System.out.println("Enter the value to be searched: ");
-        int value = sc.nextInt();
-        // int res = se.linearSearch(arr, value);
+        int arr[] = { 3, 4, 654, 777, 999, 3453 };
 
-        int res = se.binarySearch(arr, value);
-        if (res == -1) {
+        System.out.println("Given Array:" + Arrays.toString(arr));
+        System.out.println("Enter the value that you want to search: ");
+        int value = sc.nextInt();
+        // int result = se.linearSearch(arr, value);
+        int result = se.binarySearch(arr, value);
+        if (result == -1) {
             System.out.println("Value not found");
         } else {
-            System.out.println("Value is at index: " + res);
+            System.out.println("Value is at index:" + result);
         }
         System.out.println();
+        sc.close();
     }
 }

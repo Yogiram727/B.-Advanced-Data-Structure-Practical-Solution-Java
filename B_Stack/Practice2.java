@@ -6,12 +6,11 @@ public class Practice2 {
 
     public void push(int item) {
         if (top == n - 1) {
-            System.out.println("Stack overflow");
+            System.out.println("Stack Overflow");
             return;
         }
         top++;
         stack[top] = item;
-
     }
 
     public void pop() {
@@ -51,5 +50,6 @@ public class Practice2 {
         stk.pop();
         stk.pop();
         stk.display();
+        System.out.println();
     }
 }

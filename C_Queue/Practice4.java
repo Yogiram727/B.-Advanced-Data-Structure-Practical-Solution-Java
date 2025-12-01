@@ -57,12 +57,11 @@ public class Practice4 {
         System.out.println("Queue after partial deletion: ");
         qu.dequeue();
         qu.dequeue();
+        qu.dequeue();
         qu.display();
         System.out.println("Queue after full deletion: ");
         qu.dequeue();
         qu.dequeue();
-        qu.dequeue();
         qu.display();
-        System.out.println();
     }
 }
