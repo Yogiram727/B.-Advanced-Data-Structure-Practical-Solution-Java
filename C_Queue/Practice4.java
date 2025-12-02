@@ -1,13 +1,14 @@
 package C_Queue;
 
 public class Practice4 {
+
     int n = 5;
     int[] queue = new int[n];
     int front = -1, rear = -1;
 
-    public void enqueue(int value) {
+    public void enqueue(int item) {
         if ((rear + 1) % n == front) {
-            System.out.println("Queue is full");
+            System.out.println("Queue is Full");
             return;
         }
         if (front == -1) {
@@ -16,7 +17,7 @@ public class Practice4 {
         } else {
             rear = (rear + 1) % n;
         }
-        queue[rear] = value;
+        queue[rear] = item;
     }
 
     public void dequeue() {
@@ -24,12 +25,14 @@ public class Practice4 {
             System.out.println("Queue is empty");
             return;
         }
+
         if (front == rear) {
             front = -1;
             rear = -1;
         } else {
             front = (front + 1) % n;
         }
+
     }
 
     public void display() {
@@ -41,7 +44,7 @@ public class Practice4 {
         do {
             System.out.print(queue[i] + " ");
             i = (i + 1) % n;
-        } while (i != (rear + 1) % n);
+        } while (i != (rear + 10) % n);
         System.out.println();
     }
 
@@ -57,11 +60,12 @@ public class Practice4 {
         System.out.println("Queue after partial deletion: ");
         qu.dequeue();
         qu.dequeue();
-        qu.dequeue();
         qu.display();
         System.out.println("Queue after full deletion: ");
         qu.dequeue();
         qu.dequeue();
+        qu.dequeue();
         qu.display();
+
     }
 }

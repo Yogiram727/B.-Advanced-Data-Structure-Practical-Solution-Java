@@ -29,7 +29,6 @@ public class Practice1 {
         Node last = head;
         while (last.next != null) {
             last = last.next;
-
         }
         last.next = newNode;
     }
@@ -42,7 +41,6 @@ public class Practice1 {
         Node current = head;
         while (current != null && current.data != prev) {
             current = current.next;
-
         }
         if (current == null) {
             System.out.println("Node not found");
@@ -98,13 +96,11 @@ public class Practice1 {
         System.out.println("Enter any five element in the list: ");
         for (int i = 0; i < 5; i++) {
             value = sc.nextInt();
-            list.insertAtFirst(value);
-            // list.insertAtLast(value);
+            // list.insertAtFirst(value);
+            list.insertAtLast(value);
         }
-
         System.out.println("Given List: ");
         list.display();
-
         System.out.println("Enter after which value you want to insert a new value: ");
         prev = sc.nextInt();
 
@@ -115,14 +111,13 @@ public class Practice1 {
         list.insertAfter(prev, newValue);
         list.display();
 
-        System.out.println("List after the deletion of the first element: ");
+        System.out.println("List after the deletion of the first value: ");
         list.delStart();
         list.display();
 
-        System.out.println("List after the deletion of the last element: ");
+        System.out.println("List after the deletion of the last value: ");
         list.delEnd();
         list.display();
-        sc.close();
         System.out.println();
     }
 }

@@ -18,6 +18,7 @@ public class Practice6 {
     public int binarySearch(int arr[], int value) {
         int n = arr.length;
         int first = 0, last = n - 1, middle;
+
         while (first <= last) {
             middle = first + (last - first) / 2;
             if (arr[middle] == value) {
@@ -35,19 +36,18 @@ public class Practice6 {
     public static void main(String[] args) {
         Practice6 se = new Practice6();
         Scanner sc = new Scanner(System.in);
-        int arr[] = { 3, 4, 654, 777, 999, 3453 };
-
-        System.out.println("Given Array:" + Arrays.toString(arr));
-        System.out.println("Enter the value that you want to search: ");
+        int arr[] = { 1, 4, 6, 7, 44, 66 };
+        System.out.println("Given Array: " + Arrays.toString(arr));
+        System.out.println("Enter the value to be searched ");
         int value = sc.nextInt();
         // int result = se.linearSearch(arr, value);
         int result = se.binarySearch(arr, value);
         if (result == -1) {
             System.out.println("Value not found");
         } else {
-            System.out.println("Value is at index:" + result);
+            System.out.println("Value is at index " + result);
         }
-        System.out.println();
         sc.close();
+        System.out.println();
     }
 }

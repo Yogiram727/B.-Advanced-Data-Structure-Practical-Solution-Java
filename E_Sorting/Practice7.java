@@ -34,11 +34,11 @@ public class Practice7 {
 
     public static void main(String[] args) {
         Practice7 sor = new Practice7();
-        int arr[] = { 9, 4, 2, 2, 20, 1 };
+        int arr[] = { 9, 4, 2, 1, 45, 33, 66 };
         System.out.println("Given Array: " + Arrays.toString(arr));
         // sor.bubbleSort(arr);
         sor.selectionSort(arr);
         System.out.println("Array after sorting: " + Arrays.toString(arr));
-        System.out.println();
+
     }
 }
