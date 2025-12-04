@@ -1,14 +1,13 @@
 package C_Queue;
 
 public class Practice4 {
-
     int n = 5;
     int[] queue = new int[n];
     int front = -1, rear = -1;
 
     public void enqueue(int value) {
         if ((rear + 1) % n == front) {
-            System.out.println("Queue is full");
+            System.out.println("Queue is full ");
             return;
         }
         if (front == -1) {
@@ -64,5 +63,6 @@ public class Practice4 {
         qu.dequeue();
         qu.dequeue();
         qu.display();
+        System.out.println();
     }
 }

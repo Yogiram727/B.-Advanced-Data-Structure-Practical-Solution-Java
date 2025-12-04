@@ -1,6 +1,7 @@
 package B_Stack;
 
 public class Practice2 {
+
     int n = 5;
     int[] stack = new int[n];
     int top = -1;
@@ -20,7 +21,6 @@ public class Practice2 {
             return;
         }
         top--;
-
     }
 
     public void display() {
@@ -43,16 +43,15 @@ public class Practice2 {
         stk.push(5);
         System.out.println("Given Stack: ");
         stk.display();
-        System.out.println("Stack after partial deletion: ");
+        System.out.println("Stack after partial deletioN: ");
         stk.pop();
         stk.pop();
         stk.display();
-        System.out.println("Stack after full deletion: ");
+        System.out.println("Stack after full deltion: ");
         stk.pop();
         stk.pop();
         stk.pop();
         stk.display();
         System.out.println();
     }
-
 }

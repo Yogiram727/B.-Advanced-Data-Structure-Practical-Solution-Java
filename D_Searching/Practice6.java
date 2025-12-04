@@ -35,18 +35,18 @@ public class Practice6 {
     public static void main(String[] args) {
         Practice6 se = new Practice6();
         Scanner sc = new Scanner(System.in);
-        int arr[] = { 3, 4, 5, 6, 99, 444 };
+        int arr[] = { 3, 4, 6, 7, 9, 99 };
+
         System.out.println("Given Array: " + Arrays.toString(arr));
-        System.out.println("Enter the number that you want to search: ");
+        System.out.println("Enter the number to be searched");
         int value = sc.nextInt();
         // int result = se.linearSearch(arr, value);
         int result = se.binarySearch(arr, value);
         if (result == -1) {
             System.out.println("Value not found");
-
         } else {
             System.out.println("Value is at index: " + result);
         }
-        sc.close();
+
     }
 }
