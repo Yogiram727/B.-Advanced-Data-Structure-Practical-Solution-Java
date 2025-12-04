@@ -4,27 +4,59 @@ import java.util.Scanner;
 
 public class Practice3 {
 
-    public void findFactorial() {
+    public void multiplicationMatrix() {
         Scanner sc = new Scanner(System.in);
-        int num = 0;
-        int f = 1;
-        System.out.println("Enter number to find the factorial ");
-        num = sc.nextInt();
-        if (num < 0) {
-            System.out.println("Can't find factorial of negative number");
-
-        } else if (num == 0) {
-            System.out.println("Factorial of zero is 1");
-        } else {
-            for (int i = 1; i <= num; i++) {
-                f = f * i;
+        int rows1, cols1, rows2, cols2;
+        System.out.println("Enter the number of rows and columns of first matrix ");
+        rows1 = sc.nextInt();
+        cols1 = sc.nextInt();
+        System.out.println("Enter the number of rows and columns of second matrix ");
+        rows2 = sc.nextInt();
+        cols2 = sc.nextInt();
+        if (cols1 != rows2) {
+            System.out.println(" Matrix multiplicaiton not possible");
+            return;
+        }
+        int[][] matrix1 = new int[rows1][cols1];
+        int[][] matrix2 = new int[rows2][cols2];
+        int[][] result = new int[rows1][cols2];
+        System.out.println("Enter the elements of the  first matrix: ");
+        for (int i = 0; i < rows1; i++) {
+            for (int j = 0; j < cols1; j++) {
+                System.out.println("Enter element[" + (i + 1) + "][" + (j + 1) + "]");
+                matrix1[i][j] = sc.nextInt();
             }
         }
-        System.out.println("Factorial of the given number is :" + f);
+        System.out.println("Enter the elements of the second matrix:");
+        for (int i = 0; i < rows2; i++) {
+            for (int j = 0; j < cols2; j++) {
+                System.out.println("Enter element[" + (i + 1) + "][" + (j + 1) + "]");
+                matrix2[i][j] = sc.nextInt();
+            }
+        }
+        // matrix multiplication
+
+        for (int i = 0; i < rows1; i++) {
+            for (int j = 0; j < cols2; j++) {
+                result[i][j] = 0;
+
+                for (int k = 0; k < cols1; k++) {
+                    result[i][j] += matrix1[i][k] * matrix2[k][j];
+                }
+            }
+        }
+        System.out.println("Result after multiplication is ");
+        for (int i = 0; i < rows1; i++) {
+            for (int j = 0; j < cols2; j++) {
+                System.out.print(result[i][j] + " ");
+            }
+            System.out.println();
+        }
+        sc.close();
     }
 
     public static void main(String[] args) {
-        Practice3 fac = new Practice3();
-        fac.findFactorial();
+        Practice3 mul = new Practice3();
+        mul.multiplicationMatrix();
     }
 }

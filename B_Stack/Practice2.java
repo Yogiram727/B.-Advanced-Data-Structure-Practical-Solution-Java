@@ -1,7 +1,8 @@
-public class Practice2 {
+package B_Stack;
 
+public class Practice2 {
     int n = 5;
-    int stack[] = new int[n];
+    int[] stack = new int[n];
     int top = -1;
 
     public void push(int item) {
@@ -19,6 +20,7 @@ public class Practice2 {
             return;
         }
         top--;
+
     }
 
     public void display() {
@@ -34,11 +36,11 @@ public class Practice2 {
 
     public static void main(String[] args) {
         Practice2 stk = new Practice2();
-        stk.push(5);
-        stk.push(4);
-        stk.push(3);
-        stk.push(2);
         stk.push(1);
+        stk.push(2);
+        stk.push(3);
+        stk.push(4);
+        stk.push(5);
         System.out.println("Given Stack: ");
         stk.display();
         System.out.println("Stack after partial deletion: ");
@@ -50,5 +52,7 @@ public class Practice2 {
         stk.pop();
         stk.pop();
         stk.display();
+        System.out.println();
     }
+
 }

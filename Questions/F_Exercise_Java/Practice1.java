@@ -4,22 +4,26 @@ import java.util.Scanner;
 
 public class Practice1 {
 
-    public void findSumOfDigit(int num) {
+    public void sumofDigit(int num) {
         int sum = 0, rem = 0;
         while (num != 0) {
             rem = num % 10;
             sum = sum + rem;
             num = num / 10;
         }
-        System.out.println("Sums of the given digit is : " + sum);
+        System.out.println("Sum of the digits: " + sum);
+        System.out.println();
     }
 
     public static void main(String[] args) {
-        Practice1 su = new Practice1();
+        Practice1 sum = new Practice1();
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number to find the sum of its digit: ");
-        int num = sc.nextInt();
-        su.findSumOfDigit(num);
-        sc.close();
+
+        int num;
+        System.out.println("Enter any number: ");
+        num = sc.nextInt();
+        sum.sumofDigit(num);
+
     }
+
 }

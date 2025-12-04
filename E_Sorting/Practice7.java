@@ -1,3 +1,5 @@
+package E_Sorting;
+
 import java.util.Arrays;
 
 public class Practice7 {
@@ -34,11 +36,10 @@ public class Practice7 {
 
     public static void main(String[] args) {
         Practice7 sor = new Practice7();
-        int arr[] = { 9, 4, 2, 1, 45, 33, 66 };
+        int arr[] = { 9, 4, 2, 3, 2, 1, 0 };
         System.out.println("Given Array: " + Arrays.toString(arr));
         // sor.bubbleSort(arr);
         sor.selectionSort(arr);
         System.out.println("Array after sorting: " + Arrays.toString(arr));
-
     }
 }
