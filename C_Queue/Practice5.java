@@ -12,7 +12,7 @@ public class Practice5 {
         }
     }
 
-    Node rear = null, front = null;
+    Node front = null, rear = null;
 
     public void enqueue(int value) {
         Node newNode = new Node(value);
@@ -27,14 +27,14 @@ public class Practice5 {
         }
     }
 
-    public void dequeue() {
+    public void dqueue() {
         if (front == null) {
             System.out.println("Queue is empty");
             return;
         }
-        if (front == rear) {
-            front = null;
+        if (rear == front) {
             rear = null;
+            front = null;
         } else {
             front = front.next;
             rear.next = front;
@@ -52,25 +52,26 @@ public class Practice5 {
             ptr = ptr.next;
         } while (ptr != front);
         System.out.println();
+
     }
 
     public static void main(String[] args) {
         Practice5 qu = new Practice5();
         qu.enqueue(4);
-        qu.enqueue(5);
         qu.enqueue(6);
         qu.enqueue(7);
         qu.enqueue(8);
+        qu.enqueue(9);
         System.out.println("Given Queue: ");
         qu.display();
-        System.out.println("Queue after partially deletion: ");
-        qu.dequeue();
-        qu.dequeue();
+        System.out.println("Queue after partial deletion: ");
+        qu.dqueue();
+        qu.dqueue();
         qu.display();
         System.out.println("Queue after full deletion: ");
-        qu.dequeue();
-        qu.dequeue();
-        qu.dequeue();
+        qu.dqueue();
+        qu.dqueue();
+        qu.dqueue();
         qu.display();
         System.out.println();
     }

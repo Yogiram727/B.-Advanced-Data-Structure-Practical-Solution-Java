@@ -1,10 +1,8 @@
-package E_Sorting;
-
 import java.util.Arrays;
 
 public class Practice7 {
 
-    public void bubbleSorting(int arr[]) {
+    public void bubbleSort(int arr[]) {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - 1 - i; j++) {
@@ -17,7 +15,7 @@ public class Practice7 {
         }
     }
 
-    public void selectionSorting(int arr[]) {
+    public void selectionSort(int arr[]) {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
             int minIndex = i;
@@ -36,10 +34,10 @@ public class Practice7 {
 
     public static void main(String[] args) {
         Practice7 sor = new Practice7();
-        int arr[] = { 9, 4, 1, 6, 11, 49, 0 };
+        int arr[] = { 9, 4, 2, 1, 0 };
         System.out.println("Given Array: " + Arrays.toString(arr));
-        // sor.bubbleSorting(arr);
-        sor.selectionSorting(arr);
+        // sor.bubbleSort(arr);
+        sor.selectionSort(arr);
         System.out.println("Array after sorting: " + Arrays.toString(arr));
     }
 }

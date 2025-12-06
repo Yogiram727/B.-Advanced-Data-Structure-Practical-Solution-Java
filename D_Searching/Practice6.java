@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Practice6 {
 
-    public int linearSearch(int arr[], int value) {
+    public int liearSearch(int arr[], int value) {
         int n = arr.length;
         for (int i = 0; i < n; i++) {
             if (arr[i] == value) {
@@ -35,18 +35,17 @@ public class Practice6 {
     public static void main(String[] args) {
         Practice6 se = new Practice6();
         Scanner sc = new Scanner(System.in);
-        int arr[] = { 3, 4, 6, 7, 9, 99 };
-
+        int arr[] = { 3, 4, 5, 6, 88, 99 };
         System.out.println("Given Array: " + Arrays.toString(arr));
-        System.out.println("Enter the number to be searched");
+        System.out.println("Enter the value to be searched: ");
         int value = sc.nextInt();
-        // int result = se.linearSearch(arr, value);
+        // int result = se.liearSearch(arr, value);
         int result = se.binarySearch(arr, value);
         if (result == -1) {
-            System.out.println("Value not found");
+            System.out.println("Value not found: ");
         } else {
             System.out.println("Value is at index: " + result);
         }
-
+        System.out.println();
     }
 }
