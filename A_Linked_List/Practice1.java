@@ -36,7 +36,7 @@ public class Practice1 {
 
     public void insertAfter(int prev, int newValue) {
         if (head == null) {
-            System.out.println("List is empty");
+            System.out.println("list is empty");
             return;
         }
         Node current = head;
@@ -82,13 +82,12 @@ public class Practice1 {
             head = null;
             return;
         }
-        Node last = head, secodLast = null;
+        Node last = head, secondLast = null;
         while (last.next != null) {
-            secodLast = last;
+            secondLast = last;
             last = last.next;
         }
-        secodLast.next = null;
-
+        secondLast.next = null;
     }
 
     public static void main(String[] args) {
@@ -101,22 +100,21 @@ public class Practice1 {
             // list.insertAtFirst(value);
             list.insertAtLast(value);
         }
+
         System.out.println("Given List: ");
         list.display();
-        System.out.println("Enter after which value you want to insert a new value: ");
+        System.out.println("Enter after which element you want to insert a new value: ");
         prev = sc.nextInt();
         System.out.println("Enter the new value that you want to insert: ");
         newValue = sc.nextInt();
-        System.out.println("List after the inseriton of the new value: ");
+        System.out.println("List after the insertion of the new value: ");
         list.insertAfter(prev, newValue);
         list.display();
         System.out.println("List after the deletion of the first value: ");
         list.delStart();
         list.display();
-        System.out.println("List after the deletion of the last value: ");
+        System.out.println("List after the deletion of the last element: ");
         list.delEnd();
         list.display();
-        sc.close();
-        System.out.println();
     }
 }
