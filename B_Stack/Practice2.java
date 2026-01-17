@@ -2,6 +2,7 @@ public class Practice2 {
 
     int n = 5;
     int[] stack = new int[n];
+
     int top = -1;
 
     public void push(int item) {
@@ -34,22 +35,23 @@ public class Practice2 {
 
     public static void main(String args[]) {
         Practice2 stk = new Practice2();
-        stk.push(0);
         stk.push(2);
-        stk.push(3);
         stk.push(4);
-        stk.push(7);
+        stk.push(6);
+        stk.push(8);
+        stk.push(10);
         System.out.println("Given Stack: ");
         stk.display();
         System.out.println("Stack after partial deletion: ");
         stk.pop();
         stk.pop();
         stk.display();
-        System.out.println("Stack aftr full deletion: ");
+        System.out.println("Stack after full deletion: ");
         stk.pop();
         stk.pop();
         stk.pop();
         stk.display();
-        System.out.println();
+
     }
+
 }

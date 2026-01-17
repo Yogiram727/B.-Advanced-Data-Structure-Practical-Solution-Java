@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Practice1 {
+
     public class Node {
         int data;
         Node next;
@@ -19,6 +20,7 @@ public class Practice1 {
         head = newNode;
     }
 
+    //
     public void insertAtLast(int value) {
         Node newNode = new Node(value);
         newNode.next = null;
@@ -93,29 +95,33 @@ public class Practice1 {
         Practice1 list = new Practice1();
         Scanner sc = new Scanner(System.in);
         int value, prev, newValue;
-        System.out.println("Enter any five element in the list: ");
+        System.out.println("Enter any five element in the list:");
         for (int i = 0; i < 5; i++) {
             value = sc.nextInt();
             // list.insertAtFirst(value);
             list.insertAtLast(value);
         }
-        System.out.println("Given List: ");
+
+        System.out.println("Given List : ");
         list.display();
-        System.out.println("Enter after which value you want to insert a new value: ");
+
+        System.out.println("Enter after which node you want to insert a new Value");
         prev = sc.nextInt();
         System.out.println("Enter the new value that you want to insert: ");
         newValue = sc.nextInt();
+
         System.out.println("List after the insertion of the new value: ");
         list.insertAfter(prev, newValue);
         list.display();
-        System.out.println("List after the deletion of the first value: ");
+
+        System.out.println("List after the deletion of the first value");
         list.delStart();
         list.display();
+
         System.out.println("List after the deletion of the last value: ");
         list.delEnd();
         list.display();
-        System.out.println();
-        sc.close();
-        System.out.println();
+
     }
+
 }
