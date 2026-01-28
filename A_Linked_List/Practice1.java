@@ -44,7 +44,7 @@ public class Practice1 {
             current = current.next;
         }
         if (current == null) {
-            System.out.println("Node not found !");
+            System.out.println("Value not found: ");
             return;
         }
         Node newNode = new Node(newValue);
@@ -67,8 +67,7 @@ public class Practice1 {
 
     public void delStart() {
         if (head == null) {
-            System.out.println("List is empty");
-            return;
+            System.out.println("List is empty !");
         }
         head = head.next;
     }
@@ -76,10 +75,6 @@ public class Practice1 {
     public void delEnd() {
         if (head == null) {
             System.out.println("List is empty");
-            return;
-        }
-        if (head.next == null) {
-            head = null;
             return;
         }
         Node last = head, secondLast = null;
@@ -94,30 +89,29 @@ public class Practice1 {
         Practice1 list = new Practice1();
         Scanner sc = new Scanner(System.in);
         int value, prev, newValue;
-        System.out.println("Enter any five elment in the list: ");
+        System.out.println("Enter any five value in the list: ");
         for (int i = 0; i < 5; i++) {
             value = sc.nextInt();
             // list.insertAtFirst(value);
             list.insertAtLast(value);
+
         }
         System.out.println("Given List: ");
         list.display();
-        System.out.println("Enter after which value you want to insert a new value: ");
+        System.out.println("Enter after which element you want to insert a new value: ");
         prev = sc.nextInt();
         System.out.println("Enter the new value that you want to insert: ");
         newValue = sc.nextInt();
-
-        System.out.println("List after the insertion of the new value: ");
+        System.out.println("List after the insertion of new value");
         list.insertAfter(prev, newValue);
         list.display();
-
-        System.out.println("List after the deletion of the first value: ");
+        System.out.println("List after the deletion of the first element");
         list.delStart();
         list.display();
-
         System.out.println("List after the deletion of the last value: ");
         list.delEnd();
         list.display();
         sc.close();
+        System.out.println();
     }
 }

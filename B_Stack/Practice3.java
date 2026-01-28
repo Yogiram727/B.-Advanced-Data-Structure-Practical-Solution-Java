@@ -33,22 +33,22 @@ public class Practice3 {
         }
         Node ptr = top;
         while (ptr != null) {
-            System.out.println(ptr.data);
+            System.out.println(ptr.data + " ");
             ptr = ptr.next;
         }
         System.out.println();
     }
 
     public static void main(String[] args) {
-        Practice3 stk = new Practice3();
-        stk.push(5);
-        stk.push(4);
-        stk.push(3);
+        Practice2 stk = new Practice2();
         stk.push(2);
         stk.push(1);
+        stk.push(0);
+        stk.push(-1);
+        stk.push(-2);
         System.out.println("Given Stack: ");
         stk.display();
-        System.out.println("Stack after partial deleton: ");
+        System.out.println("Stack after partial deletion: ");
         stk.pop();
         stk.pop();
         stk.display();

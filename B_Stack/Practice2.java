@@ -1,8 +1,8 @@
 public class Practice2 {
 
     int n = 5;
-    int[] stack = new int[n];
     int top = -1;
+    int[] stack = new int[n];
 
     public void push(int value) {
         if (top == n - 1) {
@@ -28,6 +28,7 @@ public class Practice2 {
         }
         for (int i = top; i >= 0; i--) {
             System.out.println(stack[i]);
+
         }
         System.out.println();
     }
@@ -44,9 +45,9 @@ public class Practice2 {
         System.out.println("Stack after partial deletion: ");
         stk.pop();
         stk.pop();
-        stk.pop();
         stk.display();
         System.out.println("Stack after full deletion: ");
+        stk.pop();
         stk.pop();
         stk.pop();
         stk.display();

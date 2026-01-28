@@ -4,16 +4,16 @@ public class Practice4 {
 
     int n = 5;
     int[] queue = new int[n];
-    int rear = -1, front = -1;
+    int front = -1, rear = -1;
 
     public void enqueue(int value) {
         if ((rear + 1) % n == front) {
-            System.out.println("Queue is empty");
+            System.out.println("Queue is full");
             return;
         }
         if (front == -1) {
-            rear = 0;
             front = 0;
+            rear = 0;
         } else {
             rear = (rear + 1) % n;
         }
@@ -53,16 +53,17 @@ public class Practice4 {
         qu.enqueue(3);
         qu.enqueue(4);
         qu.enqueue(5);
-        System.out.println("Given Queue: ");
+        System.out.println("Given Stack: ");
         qu.display();
         System.out.println("Queue after partial deletion: ");
+        qu.dequeue();
         qu.dequeue();
         qu.dequeue();
         qu.display();
         System.out.println("Queue after full deletion: ");
         qu.dequeue();
         qu.dequeue();
-        qu.dequeue();
         qu.display();
+        System.out.println();
     }
 }
