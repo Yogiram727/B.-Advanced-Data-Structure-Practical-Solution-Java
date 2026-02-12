@@ -5,25 +5,25 @@ import java.util.Scanner;
 
 public class Practice6 {
     
-    public int linearSearch(int arr[],int value){
+    public int linearSearch(int arr[],int target){
         int n=arr.length;
         for(int i=0;i<n;i++){
-            if(arr[i]==value){
+            if(arr[i]==target){
                 return i;
             }
         }
         return -1;
     }
 
-    public int binarySearch(int arr[],int value){
+    public int binarySearch(int arr[],int target){
         int n=arr.length;
         int first=0,last=n-1,middle;
         while(first<=last){
             middle=first+(last-first)/2;
-            if(arr[middle]==value){
+            if(arr[middle]==target){
                 return middle;
             }
-            if(arr[middle]>value){
+            if(arr[middle]>target){
                 last=middle-1;
             }else{
                 first=middle+1;
@@ -35,9 +35,9 @@ public class Practice6 {
     public static void main(String[] args) {
         Practice6 se=new Practice6();
         Scanner sc=new Scanner(System.in);
-        int arr[]={3,4,5,6,8,30,33};
-        System.out.println("Given Array: "+Arrays.toString(arr));
-        System.out.println("Enter the value to be searched in the given array: ");
+        int arr[]={1,2,4,5,8,38};
+        System.out.println("Given Array:"+Arrays.toString(arr));
+        System.out.println("Enter the value to search in the given arrayy: ");
         int value=sc.nextInt();
         // int result=se.linearSearch(arr, value);
         int result=se.binarySearch(arr, value);
@@ -46,5 +46,7 @@ public class Practice6 {
         }else{
             System.out.println("Value is at index: "+result);
         }
+        System.out.println();
+        sc.close();
     }
 }

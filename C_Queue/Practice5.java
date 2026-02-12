@@ -2,7 +2,7 @@ package C_Queue;
 
 public class Practice5 {
     
-    public class Node{
+    static class Node{
         int data;
         Node next;
         Node(int value){
@@ -15,8 +15,8 @@ public class Practice5 {
     public void enqueue(int value){
         Node newNode=new Node(value);
         if(front==null){
-            front=newNode;
             rear=newNode;
+            front=newNode;
             rear.next=front;
         }else{
             rear.next=newNode;
@@ -33,7 +33,6 @@ public class Practice5 {
         if(front==rear){
             front=null;
             rear=null;
-            return;
         }else{
             front=front.next;
             rear.next=front;
@@ -55,21 +54,22 @@ public class Practice5 {
 
     public static void main(String[] args) {
         Practice5 qu=new Practice5();
+        qu.enqueue(4);
         qu.enqueue(5);
         qu.enqueue(6);
         qu.enqueue(7);
         qu.enqueue(8);
-        qu.enqueue(9);
         System.out.println("Given Queue: ");
         qu.display();
         System.out.println("Queue after partial deletion: ");
         qu.dequeue();
         qu.dequeue();
         qu.display();
-        System.out.println("Queue after full deletion: ");
+        System.out.println("Queue after full deleton: ");
         qu.dequeue();
         qu.dequeue();
         qu.dequeue();
         qu.display();
-        }
+        System.out.println();
+    }
 }

@@ -1,15 +1,17 @@
+package B_Stack;
+
 public class Practice3 {
     
-    public class Node{
+    static class Node{
         int data;
         Node next;
-        Node(int value){
-            this.data=value;
+        Node(int item){
+            this.data=item;
             this.next=null;
         }
     }
-    Node top=null;
 
+    Node top=null;
     public void push(int value){
         Node newNode=new Node(value);
         newNode.next=top;
@@ -38,12 +40,12 @@ public class Practice3 {
     }
 
     public static void main(String[] args) {
-        Practice3 stk=new Practice3();
-        stk.push(1);
-        stk.push(2);
+        Practice2 stk=new Practice2();
         stk.push(3);
         stk.push(4);
         stk.push(5);
+        stk.push(6);
+        stk.push(7);
         System.out.println("Given Stack: ");
         stk.display();
         System.out.println("Stack after partial deletion: ");

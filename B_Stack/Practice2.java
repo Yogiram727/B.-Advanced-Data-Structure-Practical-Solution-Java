@@ -1,7 +1,9 @@
+package B_Stack;
+
 public class Practice2 {
     
     int n=5;
-    int []stack=new int[n];
+    int[]stack=new int[n];
     int top=-1;
 
     public void push(int value){
@@ -15,7 +17,7 @@ public class Practice2 {
 
     public void pop(){
         if(top==-1){
-            System.out.println("stack is empty");
+            System.out.println("Stack is empty");
             return;
         }
         top--;
@@ -35,20 +37,21 @@ public class Practice2 {
     public static void main(String[] args) {
         Practice2 stk=new Practice2();
         stk.push(1);
+        stk.push(0);
         stk.push(3);
         stk.push(4);
-        stk.push(6);
-        stk.push(8);
-        System.out.println("Given StacK: ");
+        stk.push(5);
+        System.out.println("Given Stack: ");
         stk.display();
         System.out.println("Stack after partial deletion: ");
-        stk.pop();
         stk.pop();
         stk.pop();
         stk.display();
         System.out.println("Stack after full deletion: ");
         stk.pop();
         stk.pop();
+        stk.pop();
         stk.display();
+        System.out.println();
     }
 }
