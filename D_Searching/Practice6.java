@@ -35,14 +35,15 @@ public class Practice6 {
     public static void main(String[] args) {
         Practice6 se=new Practice6();
         Scanner sc=new Scanner(System.in);
-        int arr[]={1,2,4,5,8,38};
+        int arr[]={1,2,3,4,5,6,7};
         System.out.println("Given Array:"+Arrays.toString(arr));
-        System.out.println("Enter the value to search in the given arrayy: ");
+        System.out.println("Enter any number to search in the given array:  ");
         int value=sc.nextInt();
         // int result=se.linearSearch(arr, value);
-        int result=se.binarySearch(arr, value);
+        int result =se.binarySearch(arr, value);
         if(result==-1){
-            System.out.println("Value not found");
+            System.out.println("Value not found: ");
+
         }else{
             System.out.println("Value is at index: "+result);
         }

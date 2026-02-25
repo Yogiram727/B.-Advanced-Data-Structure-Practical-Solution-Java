@@ -18,21 +18,21 @@ public class Practice4 {
             rear=(rear+1)%n;
         }
         queue[rear]=value;
+        
     }
-
 
     public void dequeue(){
         if(front==-1){
             System.out.println("Queue is empty");
-        return;
+            return;
         }
         if(front==rear){
             front=-1;
             rear=-1;
-
         }else{
             front=(front+1)%n;
         }
+        
     }
 
     public void display(){
@@ -48,7 +48,7 @@ public class Practice4 {
         System.out.println();
     }
 
-    public static void main(String[] args) {
+    public static void main(String args[]){
         Practice4 qu=new Practice4();
         qu.enqueue(1);
         qu.enqueue(2);
@@ -60,12 +60,13 @@ public class Practice4 {
         System.out.println("Queue after partial deletion: ");
         qu.dequeue();
         qu.dequeue();
-        qu.dequeue();
         qu.display();
         System.out.println("Queue after full deletion: ");
         qu.dequeue();
         qu.dequeue();
+        qu.dequeue();
         qu.display();
         System.out.println();
+        
     }
 }

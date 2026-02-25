@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class Practice7 {
     
-    public void bubbleSort(int arr[]){
-        int n=arr.length;
+    public void bubbleSorting(int arr[]){
+        int n= arr.length;
         for(int i=0;i<n-1;i++){
             for(int j=0;j<n-i-1;j++){
                 if(arr[j]>arr[j+1]){
@@ -26,7 +26,6 @@ public class Practice7 {
                     minIndex=j;
                 }
             }
-
             if(minIndex!=i){
                 int temp=arr[i];
                 arr[i]=arr[minIndex];
@@ -37,11 +36,11 @@ public class Practice7 {
 
     public static void main(String[] args) {
         Practice7 sort=new Practice7();
-        int arr[]={9,4,8,2,1,0};
-        System.out.println("Given Array: "+Arrays.toString(arr));
-        // sort.bubbleSort(arr);
-        sort.selectionSort(arr);
+        int arr[]={9,8,4,2,1,0};
+        System.out.println("Given Arrray: "+Arrays.toString(arr));
+        sort.bubbleSorting(arr);
+        // sort.selectionSort(arr);
         System.out.println("Array after sorting: "+Arrays.toString(arr));
-        System.out.println();
+        
     }
 }
