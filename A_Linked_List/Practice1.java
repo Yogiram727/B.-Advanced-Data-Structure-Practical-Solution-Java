@@ -1,9 +1,9 @@
-package A_Linked_List;
-
+import java.net.NetworkInterface;
 import java.util.Scanner;
 
 public class Practice1 {
-    public class Node{
+    
+    static class Node{
         int data;
         Node next;
         Node(int value){
@@ -11,10 +11,11 @@ public class Practice1 {
             this.next=null;
         }
     }
+
     Node head=null;
 
     public void insertAtFirst(int value){
-        Node newNode= new Node(value);
+        Node newNode=new Node(value);
         newNode.next=head;
         head=newNode;
     }
@@ -28,12 +29,12 @@ public class Practice1 {
         }
         Node last=head;
         while(last.next!=null){
-            last=last.next;   
+            last=last.next;
         }
         last.next=newNode;
     }
 
-    public void insertAfter(int prev,int newValue){
+    public void insertAfter(int prev, int newValue){
         if(head==null){
             System.out.println("List is empty");
             return;
@@ -51,6 +52,19 @@ public class Practice1 {
         current.next=newNode;
     }
 
+    public void display(){
+        Node ptr=head;
+        if(head==null){
+            System.out.println("List is empty");
+            return;
+        }
+        while(ptr!=null){
+            System.out.print(ptr.data+" ");
+            ptr=ptr.next;
+        }
+        System.out.println();
+    }
+
     public void delStart(){
         if(head==null){
             System.out.println("List is empty");
@@ -64,45 +78,36 @@ public class Practice1 {
             System.out.println("List is empty");
             return;
         }
-        Node last=head,secondLast=null;
-        while(last.next!=null){
-          secondLast=last;
-          last=last.next;  
-        }
-        secondLast.next=null;
-    }
-
-    public void display(){
-        if(head==null){
-            System.out.println("List is empty");
+        if(head.next==null){
+            head=null;
             return;
         }
-        Node ptr=head;
-        while(ptr!=null){
-            System.out.print(ptr.data+" ");
-            ptr=ptr.next;
+        Node last=head;
+        Node secondLast=null;
+        while(last.next!=null){
+            secondLast=last;
+            last=last.next;
         }
-        System.out.println();
+        secondLast.next=null;
     }
 
     public static void main(String[] args) {
         Practice1 list=new Practice1();
         Scanner sc=new Scanner(System.in);
-        int value,prev,newValue;
-        System.out.println("Enter any five element in the list: ");
+        int value,newValue,prev;
+        System.out.println("Enter any five element in the list");
         for(int i=0;i<5;i++){
-             value=sc.nextInt();
-             list.insertAtFirst(value);
-            //  list.insertAtLast(value);
-
+            value=sc.nextInt();
+            // list.insertAtFirst(value);
+            list.insertAtLast(value);
         }
         System.out.println("Given List: ");
         list.display();
-        System.out.println("Enter after which value you want to insert a new  value: ");
+        System.out.println("Enter after which value you want to insert a new value");
         prev=sc.nextInt();
         System.out.println("Enter the new value that you want to insert: ");
         newValue=sc.nextInt();
-        System.out.println("List after the insertion of the new value");
+        System.out.println("List after the insertion of the new value: ");
         list.insertAfter(prev, newValue);
         list.display();
         System.out.println("List after the deletion of the first value: ");
@@ -112,8 +117,6 @@ public class Practice1 {
         list.delEnd();
         list.display();
         System.out.println();
-        sc.close();
+
     }
-
-
 }
